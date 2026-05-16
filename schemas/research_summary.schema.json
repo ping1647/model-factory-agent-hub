@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ResearchSummary",
+  "type": "object",
+  "required": [
+    "ticker",
+    "model_id",
+    "evidence_quality",
+    "verified_facts",
+    "model_estimates",
+    "weak_signals",
+    "missing_data",
+    "source_checklist",
+    "growth_drivers",
+    "profitability_quality",
+    "balance_sheet",
+    "moat",
+    "valuation",
+    "bull_case",
+    "bear_case",
+    "kill_switches",
+    "preliminary_decision",
+    "next_action"
+  ],
+  "properties": {
+    "ticker": {"type": "string"},
+    "model_id": {"type": "string"},
+    "evidence_quality": {
+      "enum": ["High", "Medium-High", "Medium", "Low", "Missing Data"]
+    },
+    "verified_facts": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "model_estimates": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "weak_signals": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "missing_data": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "source_checklist": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source_type", "required"],
+        "properties": {
+          "source_type": {"type": "string"},
+          "required": {"type": "boolean"},
+          "description": {"type": "string"},
+          "collected": {"type": "boolean"}
+        },
+        "additionalProperties": true
+      }
+    },
+    "growth_drivers": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "profitability_quality": {"type": "string"},
+    "balance_sheet": {"type": "string"},
+    "moat": {"type": "string"},
+    "valuation": {"type": "string"},
+    "bull_case": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "bear_case": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "kill_switches": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "preliminary_decision": {
+      "enum": ["Wait", "Risk-Blocked", "Avoid", "Starter", "Buy"]
+    },
+    "next_action": {"type": "string"}
+  }
+}
