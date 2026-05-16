@@ -34,19 +34,25 @@ jobs:
           python -m pip install --upgrade pip
           pip install pytest
 
-      - name: Run test suite
+      - name: Run tests
+        id: tests
+        continue-on-error: true
         run: pytest tests -q
 
       - name: Run manual batch pipeline
+        id: batch
+        continue-on-error: true
         run: python scripts/run_manual_batch.py
 
       - name: Append batch health log
+        if: ${{ always() }}
         run: |
           python scripts/append_batch_health_log.py \
-            --tests-status passed \
-            --batch-status passed
+            --tests-status "${{ steps.tests.outcome }}" \
+            --batch-status "${{ steps.batch.outcome }}"
 
       - name: Commit generated artifacts if changed
+        if: ${{ always() }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -59,10 +65,17 @@ jobs:
 
           if git diff --cached --quiet; then
             echo "No generated artifact changes to commit."
-            exit 0
+          else
+            git commit -m "chore: scheduled batch artifacts"
+            git push
           fi
 
-          git commit -m "chore: scheduled batch artifacts"
-          git push
+      - name: Final failure gate
+        if: ${{ always() }}
+        run: |
+          if [ "${{ steps.tests.outcome }}" = "failure" ] || [ "${{ steps.batch.outcome }}" = "failure" ]; then
+            echo "Tests or batch step failed; marking workflow as failed after logging artifacts."
+            exit 1
+          fi
 
       # TODO: Follow-up PR: harden GitHub Pages refresh/deploy because GITHUB_TOKEN commits do not trigger Pages builds.
