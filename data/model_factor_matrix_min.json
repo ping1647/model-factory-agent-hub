@@ -1,0 +1,37 @@
+{
+  "M5": {
+    "model_name": "M5 Fintech / Digital Bank / Brokerage",
+    "core_factors": ["deposits", "NIM", "NCO", "delinquency", "funding cost", "fair value accounting", "SBC"],
+    "red_flags": ["deposit outflows", "credit deterioration", "funding stress", "aggressive fair value marks", "dilution risk"],
+    "benchmark_etf": "XLF",
+    "position_sizing_rule": "Starter only when valuation is attractive and underwriting quality is unresolved."
+  },
+  "M6": {
+    "model_name": "M6 Healthcare / Pharma / MedTech",
+    "core_factors": ["pipeline durability", "clinical/regulatory milestones", "reimbursement", "gross margin quality", "cash runway"],
+    "red_flags": ["trial failure", "regulatory hold", "reimbursement compression", "single-product concentration"],
+    "benchmark_etf": "XLV",
+    "position_sizing_rule": "Full size only with catalyst visibility, balance-sheet support, and downside containment."
+  },
+  "M7": {
+    "model_name": "M7 Semiconductor / AI Compute / Foundry / Packaging",
+    "core_factors": ["AI demand", "HBM/CoWoS capacity", "export controls", "customer concentration", "valuation"],
+    "red_flags": ["inventory correction", "capacity bottlenecks", "policy shock", "single-customer dependency", "multiple compression"],
+    "benchmark_etf": "SOXX",
+    "position_sizing_rule": "Scale with confirmed demand and supply-chain execution; trim when valuation disconnect widens."
+  },
+  "M13": {
+    "model_name": "M13 Water / Environmental Infrastructure / PFAS",
+    "core_factors": ["backlog", "project timing", "PFAS exposure", "guidance credibility", "cash flow", "customer concentration"],
+    "red_flags": ["backlog slippage", "municipal budget pressure", "PFAS liability", "working-capital stress"],
+    "benchmark_etf": "PHO",
+    "position_sizing_rule": "Increase only after backlog conversion and cash realization are evidenced."
+  },
+  "M14": {
+    "model_name": "M14 AI Energy Infrastructure / Power Bottleneck",
+    "core_factors": ["PPAs", "load growth", "rate-case recovery", "capex/debt", "merchant power risk"],
+    "red_flags": ["regulatory disallowance", "capex overrun", "debt service strain", "merchant volatility", "counterparty concentration"],
+    "benchmark_etf": "XLU",
+    "position_sizing_rule": "Prefer staged sizing until recovery mechanisms and financing are validated."
+  }
+}
