@@ -1,0 +1,13 @@
+[
+  {"ticker":"TTEK","model_id":"M13","company_name":"Tetra Tech, Inc.","priority":"core_watch","benchmark_etf":["PHO","PIO"],"status":"active","notes":"Core water infrastructure watchlist name for M13."},
+  {"ticker":"ERII","model_id":"M13","company_name":"Energy Recovery, Inc.","priority":"core_watch","benchmark_etf":["PHO","PIO"],"status":"active","notes":"Core desalination and industrial fluid efficiency watch."},
+  {"ticker":"SOFI","model_id":"M5","company_name":"SoFi Technologies, Inc.","priority":"core_watch","benchmark_etf":["XLF","KRE"],"status":"active","notes":"Core fintech coverage under M5."},
+  {"ticker":"HIMS","model_id":"M6","company_name":"Hims & Hers Health, Inc.","priority":"satellite_watch","benchmark_etf":["IHF","XLY"],"status":"active","notes":"Satellite digital-health growth watch."},
+  {"ticker":"NVDA","model_id":"M7","company_name":"NVIDIA Corporation","priority":"core_watch","benchmark_etf":["SOXX","SMH"],"status":"active","notes":"Core AI semiconductor watch."},
+  {"ticker":"VST","model_id":"M14","company_name":"Vistra Corp.","priority":"satellite_watch","benchmark_etf":["XLU","PAVE"],"status":"active","notes":"Power demand and generation exposure watch."},
+  {"ticker":"GOOGL","model_id":"M1","company_name":"Alphabet Inc.","priority":"core_watch","benchmark_etf":["QQQ","XLC"],"status":"paused","notes":"Paused until Source Collector adds M1 support."},
+  {"ticker":"V","model_id":"M11","company_name":"Visa Inc.","priority":"core_watch","benchmark_etf":["XLF","IYW"],"status":"paused","notes":"Paused until Source Collector adds M11 support."},
+  {"ticker":"JPM","model_id":"M12","company_name":"JPMorgan Chase & Co.","priority":"core_watch","benchmark_etf":["XLF","KBE"],"status":"paused","notes":"Paused until Source Collector adds M12 support."},
+  {"ticker":"RKLB","model_id":"M10","company_name":"Rocket Lab USA, Inc.","priority":"speculative_watch","benchmark_etf":["ARKX","ITA"],"status":"paused","notes":"Paused until Source Collector adds M10 support."},
+  {"ticker":"IONQ","model_id":"M9","company_name":"IonQ, Inc.","priority":"speculative_watch","benchmark_etf":["QTUM","ARKK"],"status":"paused","notes":"Paused until Source Collector adds M9 support."}
+]

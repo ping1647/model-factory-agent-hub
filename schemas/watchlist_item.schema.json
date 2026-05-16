@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ping1647.github.io/model-factory-agent-hub/schemas/watchlist_item.schema.json",
+  "title": "Watchlist Item",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "ticker",
+    "model_id",
+    "company_name",
+    "priority",
+    "benchmark_etf",
+    "status",
+    "notes"
+  ],
+  "properties": {
+    "ticker": {
+      "type": "string",
+      "minLength": 1
+    },
+    "model_id": {
+      "type": "string",
+      "pattern": "^M[0-9]+$"
+    },
+    "company_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "priority": {
+      "type": "string",
+      "enum": ["core_watch", "satellite_watch", "speculative_watch"]
+    },
+    "benchmark_etf": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "minItems": 1
+    },
+    "status": {
+      "type": "string",
+      "enum": ["active", "paused"]
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}
