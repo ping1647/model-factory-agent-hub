@@ -1,0 +1,223 @@
+{
+  "blockers": [],
+  "model_id": "M7",
+  "next_action": "Provide base_audit input, then run risk/dashboard/PQA stages.",
+  "pipeline_result": {
+    "blockers": [],
+    "dashboard_card": null,
+    "data_audit": {
+      "benchmark_etf": [
+        "SMH",
+        "SOXX"
+      ],
+      "benchmark_status": "Present",
+      "buy_zone_high": 105.0,
+      "buy_zone_low": 95.0,
+      "buy_zone_status": "Above Buy Zone",
+      "current_price": 112.0,
+      "data_quality": "Usable",
+      "decision_blockers": [],
+      "eps_guidance_midpoint": 2.35,
+      "forward_pe": 47.659574468085104,
+      "gap_to_buy_zone_pct": 6.666666666666667,
+      "model_id": "M7",
+      "next_action": "Proceed to risk review",
+      "price_as_of": "2026-05-16",
+      "price_freshness_status": "Fresh",
+      "stale_price": false,
+      "ticker": "NVDA",
+      "valuation_status": "Computed"
+    },
+    "memory_check": {
+      "failures": [],
+      "missing_context_keys": [],
+      "next_action": "Proceed: required memory context is complete, fresh, and supported.",
+      "passed": true,
+      "severity": "Pass",
+      "stale_context_keys": [],
+      "unsupported_model_ids": [],
+      "warnings": []
+    },
+    "model_id": "M7",
+    "next_action": "Provide base_audit input, then run risk/dashboard/PQA stages.",
+    "pipeline_status": "Needs Audit",
+    "pqa_report": null,
+    "research_summary": {
+      "balance_sheet": "Missing Data",
+      "bear_case": [],
+      "bull_case": [],
+      "evidence_quality": "Missing Data",
+      "growth_drivers": [],
+      "kill_switches": [],
+      "missing_data": [
+        "sec_10k_or_annual_report",
+        "sec_10q_or_quarterly_report",
+        "latest_earnings_release",
+        "latest_earnings_call_transcript",
+        "investor_presentation",
+        "current_price_and_market_data",
+        "segment_revenue_mix",
+        "gross_margin_drivers",
+        "customer_concentration",
+        "supply_chain_and_capacity",
+        "export_control_and_regulatory"
+      ],
+      "moat": "Missing Data",
+      "model_estimates": [],
+      "model_id": "M7",
+      "next_action": "Collect and verify required sources before audit decision.",
+      "preliminary_decision": "Wait",
+      "profitability_quality": "Missing Data",
+      "source_checklist": [
+        {
+          "required": true,
+          "source_type": "sec_10k_or_annual_report",
+          "tier": "primary",
+          "why_needed": "Anchor long-term fundamentals, risks, and accounting disclosures."
+        },
+        {
+          "required": true,
+          "source_type": "sec_10q_or_quarterly_report",
+          "tier": "primary",
+          "why_needed": "Capture latest quarter operating trends and balance-sheet updates."
+        },
+        {
+          "required": true,
+          "source_type": "latest_earnings_release",
+          "tier": "primary",
+          "why_needed": "Confirm reported results, guidance, and management commentary."
+        },
+        {
+          "required": true,
+          "source_type": "latest_earnings_call_transcript",
+          "tier": "primary",
+          "why_needed": "Validate qualitative signals, Q&A details, and management tone."
+        },
+        {
+          "required": true,
+          "source_type": "investor_presentation",
+          "tier": "secondary",
+          "why_needed": "Cross-check segment KPIs and strategic priorities highlighted to investors."
+        },
+        {
+          "required": true,
+          "source_type": "current_price_and_market_data",
+          "tier": "primary",
+          "why_needed": "Support valuation discipline, benchmark-relative checks, and freshness control."
+        },
+        {
+          "required": true,
+          "source_type": "segment_revenue_mix",
+          "tier": "primary",
+          "why_needed": "Determine which end-markets are driving incremental growth."
+        },
+        {
+          "required": true,
+          "source_type": "gross_margin_drivers",
+          "tier": "primary",
+          "why_needed": "Assess pricing power, mix quality, and cost leverage."
+        },
+        {
+          "required": true,
+          "source_type": "customer_concentration",
+          "tier": "secondary",
+          "why_needed": "Estimate dependence on hyperscalers and major OEMs."
+        },
+        {
+          "required": true,
+          "source_type": "supply_chain_and_capacity",
+          "tier": "secondary",
+          "why_needed": "Evaluate foundry, packaging, and component bottleneck risk."
+        },
+        {
+          "required": true,
+          "source_type": "export_control_and_regulatory",
+          "tier": "primary",
+          "why_needed": "Capture constraints from export rules and policy changes."
+        }
+      ],
+      "ticker": "NVDA",
+      "valuation": "Missing Data",
+      "verified_facts": [],
+      "weak_signals": []
+    },
+    "risk_adjusted_audit": null,
+    "source_requirements": {
+      "model_id": "M7",
+      "source_requirements": [
+        {
+          "required": true,
+          "source_type": "sec_10k_or_annual_report",
+          "tier": "primary",
+          "why_needed": "Anchor long-term fundamentals, risks, and accounting disclosures."
+        },
+        {
+          "required": true,
+          "source_type": "sec_10q_or_quarterly_report",
+          "tier": "primary",
+          "why_needed": "Capture latest quarter operating trends and balance-sheet updates."
+        },
+        {
+          "required": true,
+          "source_type": "latest_earnings_release",
+          "tier": "primary",
+          "why_needed": "Confirm reported results, guidance, and management commentary."
+        },
+        {
+          "required": true,
+          "source_type": "latest_earnings_call_transcript",
+          "tier": "primary",
+          "why_needed": "Validate qualitative signals, Q&A details, and management tone."
+        },
+        {
+          "required": true,
+          "source_type": "investor_presentation",
+          "tier": "secondary",
+          "why_needed": "Cross-check segment KPIs and strategic priorities highlighted to investors."
+        },
+        {
+          "required": true,
+          "source_type": "current_price_and_market_data",
+          "tier": "primary",
+          "why_needed": "Support valuation discipline, benchmark-relative checks, and freshness control."
+        },
+        {
+          "required": true,
+          "source_type": "segment_revenue_mix",
+          "tier": "primary",
+          "why_needed": "Determine which end-markets are driving incremental growth."
+        },
+        {
+          "required": true,
+          "source_type": "gross_margin_drivers",
+          "tier": "primary",
+          "why_needed": "Assess pricing power, mix quality, and cost leverage."
+        },
+        {
+          "required": true,
+          "source_type": "customer_concentration",
+          "tier": "secondary",
+          "why_needed": "Estimate dependence on hyperscalers and major OEMs."
+        },
+        {
+          "required": true,
+          "source_type": "supply_chain_and_capacity",
+          "tier": "secondary",
+          "why_needed": "Evaluate foundry, packaging, and component bottleneck risk."
+        },
+        {
+          "required": true,
+          "source_type": "export_control_and_regulatory",
+          "tier": "primary",
+          "why_needed": "Capture constraints from export rules and policy changes."
+        }
+      ],
+      "ticker": "NVDA"
+    },
+    "ticker": "NVDA"
+  },
+  "pipeline_status": "Needs Audit",
+  "run_date": "2026-05-16",
+  "run_id": "manual-20260516-181307",
+  "ticker": "NVDA"
+}

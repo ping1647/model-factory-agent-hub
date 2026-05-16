@@ -1,0 +1,210 @@
+{
+  "blockers": [],
+  "model_id": "M14",
+  "next_action": "Provide base_audit input, then run risk/dashboard/PQA stages.",
+  "pipeline_result": {
+    "blockers": [],
+    "dashboard_card": null,
+    "data_audit": {
+      "benchmark_etf": [
+        "XLU",
+        "VPU"
+      ],
+      "benchmark_status": "Present",
+      "buy_zone_high": 69.0,
+      "buy_zone_low": 64.0,
+      "buy_zone_status": "Above Buy Zone",
+      "current_price": 71.0,
+      "data_quality": "Usable",
+      "decision_blockers": [],
+      "eps_guidance_midpoint": 4.15,
+      "forward_pe": 17.10843373493976,
+      "gap_to_buy_zone_pct": 2.898550724637681,
+      "model_id": "M14",
+      "next_action": "Proceed to risk review",
+      "price_as_of": "2026-05-16",
+      "price_freshness_status": "Fresh",
+      "stale_price": false,
+      "ticker": "VST",
+      "valuation_status": "Computed"
+    },
+    "memory_check": {
+      "failures": [],
+      "missing_context_keys": [],
+      "next_action": "Proceed: required memory context is complete, fresh, and supported.",
+      "passed": true,
+      "severity": "Pass",
+      "stale_context_keys": [],
+      "unsupported_model_ids": [],
+      "warnings": []
+    },
+    "model_id": "M14",
+    "next_action": "Provide base_audit input, then run risk/dashboard/PQA stages.",
+    "pipeline_status": "Needs Audit",
+    "pqa_report": null,
+    "research_summary": {
+      "balance_sheet": "Missing Data",
+      "bear_case": [],
+      "bull_case": [],
+      "evidence_quality": "Missing Data",
+      "growth_drivers": [],
+      "kill_switches": [],
+      "missing_data": [
+        "sec_10k_or_annual_report",
+        "sec_10q_or_quarterly_report",
+        "latest_earnings_release",
+        "latest_earnings_call_transcript",
+        "investor_presentation",
+        "current_price_and_market_data",
+        "ppa_and_contract_quality",
+        "regulatory_and_rate_case",
+        "capex_and_debt_funding",
+        "data_center_load_and_customer_demand"
+      ],
+      "moat": "Missing Data",
+      "model_estimates": [],
+      "model_id": "M14",
+      "next_action": "Collect and verify required sources before audit decision.",
+      "preliminary_decision": "Wait",
+      "profitability_quality": "Missing Data",
+      "source_checklist": [
+        {
+          "required": true,
+          "source_type": "sec_10k_or_annual_report",
+          "tier": "primary",
+          "why_needed": "Anchor long-term fundamentals, risks, and accounting disclosures."
+        },
+        {
+          "required": true,
+          "source_type": "sec_10q_or_quarterly_report",
+          "tier": "primary",
+          "why_needed": "Capture latest quarter operating trends and balance-sheet updates."
+        },
+        {
+          "required": true,
+          "source_type": "latest_earnings_release",
+          "tier": "primary",
+          "why_needed": "Confirm reported results, guidance, and management commentary."
+        },
+        {
+          "required": true,
+          "source_type": "latest_earnings_call_transcript",
+          "tier": "primary",
+          "why_needed": "Validate qualitative signals, Q&A details, and management tone."
+        },
+        {
+          "required": true,
+          "source_type": "investor_presentation",
+          "tier": "secondary",
+          "why_needed": "Cross-check segment KPIs and strategic priorities highlighted to investors."
+        },
+        {
+          "required": true,
+          "source_type": "current_price_and_market_data",
+          "tier": "primary",
+          "why_needed": "Support valuation discipline, benchmark-relative checks, and freshness control."
+        },
+        {
+          "required": true,
+          "source_type": "ppa_and_contract_quality",
+          "tier": "primary",
+          "why_needed": "Verify revenue visibility, tenor, and counterparty strength."
+        },
+        {
+          "required": true,
+          "source_type": "regulatory_and_rate_case",
+          "tier": "primary",
+          "why_needed": "Track recoverability and tariff-related earnings sensitivity."
+        },
+        {
+          "required": true,
+          "source_type": "capex_and_debt_funding",
+          "tier": "secondary",
+          "why_needed": "Assess financing feasibility and balance-sheet stress."
+        },
+        {
+          "required": true,
+          "source_type": "data_center_load_and_customer_demand",
+          "tier": "primary",
+          "why_needed": "Validate AI-load demand durability and concentration risk."
+        }
+      ],
+      "ticker": "VST",
+      "valuation": "Missing Data",
+      "verified_facts": [],
+      "weak_signals": []
+    },
+    "risk_adjusted_audit": null,
+    "source_requirements": {
+      "model_id": "M14",
+      "source_requirements": [
+        {
+          "required": true,
+          "source_type": "sec_10k_or_annual_report",
+          "tier": "primary",
+          "why_needed": "Anchor long-term fundamentals, risks, and accounting disclosures."
+        },
+        {
+          "required": true,
+          "source_type": "sec_10q_or_quarterly_report",
+          "tier": "primary",
+          "why_needed": "Capture latest quarter operating trends and balance-sheet updates."
+        },
+        {
+          "required": true,
+          "source_type": "latest_earnings_release",
+          "tier": "primary",
+          "why_needed": "Confirm reported results, guidance, and management commentary."
+        },
+        {
+          "required": true,
+          "source_type": "latest_earnings_call_transcript",
+          "tier": "primary",
+          "why_needed": "Validate qualitative signals, Q&A details, and management tone."
+        },
+        {
+          "required": true,
+          "source_type": "investor_presentation",
+          "tier": "secondary",
+          "why_needed": "Cross-check segment KPIs and strategic priorities highlighted to investors."
+        },
+        {
+          "required": true,
+          "source_type": "current_price_and_market_data",
+          "tier": "primary",
+          "why_needed": "Support valuation discipline, benchmark-relative checks, and freshness control."
+        },
+        {
+          "required": true,
+          "source_type": "ppa_and_contract_quality",
+          "tier": "primary",
+          "why_needed": "Verify revenue visibility, tenor, and counterparty strength."
+        },
+        {
+          "required": true,
+          "source_type": "regulatory_and_rate_case",
+          "tier": "primary",
+          "why_needed": "Track recoverability and tariff-related earnings sensitivity."
+        },
+        {
+          "required": true,
+          "source_type": "capex_and_debt_funding",
+          "tier": "secondary",
+          "why_needed": "Assess financing feasibility and balance-sheet stress."
+        },
+        {
+          "required": true,
+          "source_type": "data_center_load_and_customer_demand",
+          "tier": "primary",
+          "why_needed": "Validate AI-load demand durability and concentration risk."
+        }
+      ],
+      "ticker": "VST"
+    },
+    "ticker": "VST"
+  },
+  "pipeline_status": "Needs Audit",
+  "run_date": "2026-05-16",
+  "run_id": "manual-20260516-181307",
+  "ticker": "VST"
+}
