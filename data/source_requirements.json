@@ -1,4 +1,42 @@
 {
+  "common": [
+    {
+      "source_type": "sec_10k_or_annual_report",
+      "tier": "primary",
+      "why_needed": "Anchor long-term fundamentals, risks, and accounting disclosures.",
+      "required": true
+    },
+    {
+      "source_type": "sec_10q_or_quarterly_report",
+      "tier": "primary",
+      "why_needed": "Capture latest quarter operating trends and balance-sheet updates.",
+      "required": true
+    },
+    {
+      "source_type": "latest_earnings_release",
+      "tier": "primary",
+      "why_needed": "Confirm reported results, guidance, and management commentary.",
+      "required": true
+    },
+    {
+      "source_type": "latest_earnings_call_transcript",
+      "tier": "primary",
+      "why_needed": "Validate qualitative signals, Q&A details, and management tone.",
+      "required": true
+    },
+    {
+      "source_type": "investor_presentation",
+      "tier": "secondary",
+      "why_needed": "Cross-check segment KPIs and strategic priorities highlighted to investors.",
+      "required": true
+    },
+    {
+      "source_type": "current_price_and_market_data",
+      "tier": "primary",
+      "why_needed": "Support valuation discipline, benchmark-relative checks, and freshness control.",
+      "required": true
+    }
+  ],
   "models": {
     "M5": [
       {
