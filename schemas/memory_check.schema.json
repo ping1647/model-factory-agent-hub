@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "memory_check.schema.json",
+  "title": "MemoryCheckResult",
+  "type": "object",
+  "required": [
+    "passed",
+    "missing_context_keys",
+    "stale_context_keys",
+    "unsupported_model_ids",
+    "warnings",
+    "failures",
+    "severity",
+    "next_action"
+  ],
+  "properties": {
+    "passed": { "type": "boolean" },
+    "missing_context_keys": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "stale_context_keys": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "unsupported_model_ids": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "warnings": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "failures": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "severity": {
+      "type": "string",
+      "enum": ["Pass", "Warning", "Fail"]
+    },
+    "next_action": { "type": "string" }
+  },
+  "additionalProperties": false
+}
