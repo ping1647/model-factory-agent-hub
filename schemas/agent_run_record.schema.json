@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ping1647.github.io/model-factory-agent-hub/schemas/agent_run_record.schema.json",
+  "title": "AgentRunRecord",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "run_id",
+    "run_date",
+    "ticker",
+    "model_id",
+    "pipeline_status",
+    "blockers",
+    "next_action",
+    "pipeline_result"
+  ],
+  "properties": {
+    "run_id": {"type": "string", "minLength": 1},
+    "run_date": {"type": "string", "minLength": 1},
+    "ticker": {"type": "string", "minLength": 1},
+    "model_id": {"type": "string", "minLength": 1},
+    "pipeline_status": {"type": "string"},
+    "blockers": {"type": "array"},
+    "next_action": {"type": "string"},
+    "pipeline_result": {"type": "object"}
+  }
+}
