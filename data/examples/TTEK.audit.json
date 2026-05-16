@@ -1,0 +1,66 @@
+{
+  "ticker": "TTEK",
+  "company": "Tetra Tech",
+  "model_id": "M13",
+  "decision": "Starter",
+  "risk_score": 4,
+  "position_class": "Core/Satellite Starter",
+  "evidence_quality": "Medium-High",
+  "benchmark_etf": [
+    "PHO",
+    "PIO",
+    "XLU",
+    "VOO"
+  ],
+  "verified_facts": [
+    "Q2 FY2026 net revenue $1.05B, +8% YoY",
+    "EBITDA $146M",
+    "Backlog $4.28B",
+    "Net debt/EBITDA 1.0x"
+  ],
+  "model_estimates": [
+    "Forward P/E about 17x using FY2026 adjusted EPS midpoint"
+  ],
+  "weak_signals": [],
+  "growth_drivers": [
+    "water",
+    "PFAS",
+    "environmental infrastructure",
+    "defense/federal"
+  ],
+  "profitability_quality": "Strong cash flow and margin expansion, but fixed-price mix requires cost execution discipline.",
+  "balance_sheet": "Low leverage and strong operating cash flow.",
+  "moat": "Technical consulting scale and water/environment expertise.",
+  "valuation": "Reasonable for starter, not heavy buy without organic growth and 2027 visibility.",
+  "bull_case": [
+    "cash flow",
+    "low leverage",
+    "water/PFAS demand",
+    "backlog growth",
+    "margin expansion"
+  ],
+  "bear_case": [
+    "state/local guidance reduced",
+    "commercial weakness",
+    "shorter backlog",
+    "limited 2027 visibility"
+  ],
+  "kill_switches": [
+    "budget cuts",
+    "fixed-price cost overruns",
+    "margin compression",
+    "backlog deterioration"
+  ],
+  "missing_data": [
+    "organic growth split",
+    "PFAS revenue %",
+    "2027 visibility",
+    "valuation percentile"
+  ],
+  "blocked_by": [
+    "organic growth split missing",
+    "2027 visibility limited"
+  ],
+  "next_action": "Small starter only; verify official URLs and benchmark alpha before adding.",
+  "human_approval_required": true
+}

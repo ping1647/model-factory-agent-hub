@@ -1,14 +1,15 @@
-# Dashboard MVP
+# Model Factory Agent Hub
 
-Future mobile-friendly web dashboard.
+A full-automation research and dashboard system for Ping's Investing Model Factory.
 
-Planned pages:
-1. Command Center
-2. Buy Zone Board
-3. Stock Detail
-4. Model Progress
-5. Agent Run Log
+## Goal
 
-Initial data source:
-- data/examples/*.audit.json
-- later: Supabase or Google Sheet sync
+Automate the workflow from watchlist → source collection → source reading → data audit → risk audit → model learning → dashboard update → human approval.
+
+This system is decision-support only. It must never execute buy/sell orders.
+
+## Current reference cases
+
+- TTEK = Final Audit V1 / Starter / Core-Satellite
+- ERII = Final Audit V1 / Wait / Risk-Blocked
+- SOFI = Final Audit V1 / Starter / High-Beta Satellite
