@@ -74,3 +74,19 @@ This dashboard deploys from GitHub Actions on pushes to `main` via `.github/work
 
 This is an MVP presentation layer intended for dashboard UX iteration.
 All trading decisions remain human-approved.
+
+
+## Compatibility Notes (Generated JSON v0.2)
+
+The UI supports both legacy and generated summary keys:
+
+- `total` or `total_count`
+- `pass` or `pass_count`
+- `warning` or `warning_count`
+- `fail` or `fail_count`
+- `needs_audit` or `needs_audit_count`
+- `risk_blocked` or `risk_blocked_count`
+
+Command Center ticker lists (`top_candidates`, `blocked_names`, `needs_review`) may contain either ticker strings or stock objects with a `ticker` field; both shapes are rendered safely.
+
+If `generated_at` is missing, the header shows `Generated: latest dashboard_data.json`.

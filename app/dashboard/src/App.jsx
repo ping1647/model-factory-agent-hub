@@ -10,7 +10,37 @@ const SUMMARY_KEYS = [
   { key: 'risk_blocked', label: 'Risk-Blocked' }
 ];
 
+const SUMMARY_KEY_ALIASES = {
+  total: ['total', 'total_count'],
+  pass: ['pass', 'pass_count'],
+  warning: ['warning', 'warning_count'],
+  fail: ['fail', 'fail_count'],
+  needs_audit: ['needs_audit', 'needs_audit_count'],
+  risk_blocked: ['risk_blocked', 'risk_blocked_count']
+};
+
 const statusClass = (value = '') => value.toLowerCase().replace(/\s+/g, '_').replace(/-/g, '_');
+
+function getSummaryValue(summary, key) {
+  const aliases = SUMMARY_KEY_ALIASES[key] || [key];
+  for (const alias of aliases) {
+    const value = summary?.[alias];
+    if (typeof value === 'number') {
+      return value;
+    }
+  }
+  return 0;
+}
+
+function getTickerLabel(item) {
+  if (typeof item === 'string') {
+    return item;
+  }
+  if (item && typeof item === 'object' && typeof item.ticker === 'string') {
+    return item.ticker;
+  }
+  return 'Unknown';
+}
 
 function renderBlockers(blockers) {
   if (!Array.isArray(blockers) || blockers.length === 0) {
@@ -23,7 +53,7 @@ function renderTickerList(list) {
   if (!Array.isArray(list) || list.length === 0) {
     return 'None';
   }
-  return list.join(', ');
+  return list.map(getTickerLabel).join(', ');
 }
 
 async function fetchDashboardData() {
@@ -100,11 +130,16 @@ export default function App() {
     );
   }
 
+  const totalProcessed = getSummaryValue(data.summary, 'total');
+  const generatedLabel = data.generated_at
+    ? `Generated: ${new Date(data.generated_at).toLocaleString()}`
+    : 'Generated: latest dashboard_data.json';
+
   return (
     <main className="app-shell">
       <header>
         <h1>Model Factory Dashboard MVP v0.1</h1>
-        <p className="muted">Generated: {new Date(data.generated_at).toLocaleString()}</p>
+        <p className="muted">{generatedLabel}</p>
         {loadError && <p className="muted">Using fallback sample data: {loadError}</p>}
       </header>
 
@@ -114,7 +149,7 @@ export default function App() {
           {SUMMARY_KEYS.map((item) => (
             <div className="summary-card" key={item.key}>
               <p className="summary-label">{item.label}</p>
-              <p className="summary-value">{data.summary?.[item.key] ?? 0}</p>
+              <p className="summary-value">{getSummaryValue(data.summary, item.key)}</p>
             </div>
           ))}
         </div>
@@ -126,6 +161,7 @@ export default function App() {
         <p><span className="field">Data Source:</span> {data.command_center?.data_source}</p>
         <p><span className="field">Benchmark:</span> {data.command_center?.benchmark}</p>
         <p><span className="field">Note:</span> {data.command_center?.note}</p>
+        <p><span className="field">Processed Universe:</span> {totalProcessed}</p>
         <p><span className="field">Top Candidates:</span> {renderTickerList(data.command_center?.top_candidates)}</p>
         <p><span className="field">Blocked Names:</span> {renderTickerList(data.command_center?.blocked_names)}</p>
         <p><span className="field">Needs Review:</span> {renderTickerList(data.command_center?.needs_review)}</p>
