@@ -5,10 +5,15 @@ from __future__ import annotations
 import argparse
 import json
 import shutil
+import sys
 from collections import Counter
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
+
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 
 from agents.batch_runner import load_watchlist, run_and_persist_batch
 
@@ -61,6 +66,7 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Run manual deterministic watchlist batch")
     parser.add_argument("--run-id", default=None)
     parser.add_argument("--run-date", default=None)
+    parser.add_argument("--run-output-dir", default=DEFAULT_RUN_OUTPUT_DIR)
     parser.add_argument("--watchlist-path", default=DEFAULT_WATCHLIST_PATH)
     parser.add_argument("--market-inputs-path", default=DEFAULT_MARKET_INPUTS_PATH)
     parser.add_argument("--dashboard-output-path", default=DEFAULT_DASHBOARD_OUTPUT_PATH)
@@ -90,7 +96,7 @@ def main() -> int:
         model_factor_matrix=model_factor_matrix,
         market_inputs_by_ticker=market_inputs_by_ticker,
         base_audits_by_ticker=base_audits_by_ticker,
-        run_output_dir=DEFAULT_RUN_OUTPUT_DIR,
+        run_output_dir=args.run_output_dir,
         dashboard_output_path=args.dashboard_output_path,
     )
 

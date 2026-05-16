@@ -28,6 +28,8 @@ jobs:
 
       - name: Run manual deterministic batch
         run: python scripts/run_manual_batch.py
+        env:
+          PYTHONPATH: .
 
       - name: Commit generated artifacts
         run: |
