@@ -1,0 +1,36 @@
+[
+  {
+    "ticker": "TTEK",
+    "model_id": "M13",
+    "decision_date": "2026-05-01",
+    "decision": "Starter",
+    "benchmark_etf": ["PHO"],
+    "thesis_summary": "Backlog and margin quality improving while project execution risk remains manageable.",
+    "risk_score": 4,
+    "position_class": "Starter",
+    "evidence_quality": "High",
+    "missing_data": ["next quarter bookings"],
+    "expected_review_windows": ["1M", "3M", "6M", "12M"],
+    "outcome_status": "Pending",
+    "lessons": [],
+    "rule_update_needed": false,
+    "human_review_required": true
+  },
+  {
+    "ticker": "ERII",
+    "model_id": "M13",
+    "decision_date": "2026-05-01",
+    "decision": "Wait",
+    "benchmark_etf": ["PHO"],
+    "thesis_summary": "Guidance credibility is weak and near-term execution risk is elevated.",
+    "risk_score": 8,
+    "position_class": "Risk-Blocked",
+    "evidence_quality": "Medium",
+    "missing_data": ["management clarity on guidance"],
+    "expected_review_windows": ["1M", "3M", "6M", "12M"],
+    "outcome_status": "Pending",
+    "lessons": [],
+    "rule_update_needed": false,
+    "human_review_required": true
+  }
+]
