@@ -1,0 +1,37 @@
+[
+  {
+    "ticker": "TTEK",
+    "model_id": "M13",
+    "benchmark": [
+      "PHO",
+      "PIO",
+      "XLU",
+      "VOO"
+    ]
+  },
+  {
+    "ticker": "ERII",
+    "model_id": "M13",
+    "benchmark": [
+      "PHO",
+      "PIO"
+    ]
+  },
+  {
+    "ticker": "SOFI",
+    "model_id": "M5",
+    "benchmark": [
+      "FINX",
+      "ARKF",
+      "QQQ"
+    ]
+  },
+  {
+    "ticker": "HIMS",
+    "model_id": "M6",
+    "benchmark": [
+      "XLV",
+      "QQQ"
+    ]
+  }
+]

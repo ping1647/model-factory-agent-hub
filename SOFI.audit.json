@@ -1,0 +1,67 @@
+{
+  "ticker": "SOFI",
+  "company": "SoFi Technologies",
+  "model_id": "M5",
+  "decision": "Starter",
+  "risk_score": 7,
+  "position_class": "Satellite / High-Beta Starter",
+  "evidence_quality": "Medium-High",
+  "benchmark_etf": [
+    "FINX",
+    "ARKF",
+    "QQQ"
+  ],
+  "verified_facts": [
+    "Q1 2026 GAAP revenue $1.1B, +43% YoY",
+    "Adjusted net revenue $1.09B, +41% YoY",
+    "Deposits $40.2B",
+    "Personal loan NCO 3.03%"
+  ],
+  "model_estimates": [],
+  "weak_signals": [
+    "Reddit bear case on fair-value accounting requires verification"
+  ],
+  "growth_drivers": [
+    "Lending",
+    "Financial Services",
+    "member growth",
+    "cross-sell",
+    "deposits"
+  ],
+  "profitability_quality": "GAAP profitable, but SBC and fair-value accounting require monitoring.",
+  "balance_sheet": "Strong capital ratio and deposit funding, but credit-cycle risk remains.",
+  "moat": "Bank charter, deposit funding, member ecosystem, cross-sell.",
+  "valuation": "Starter only if credit holds and Tech Platform returns to growth.",
+  "bull_case": [
+    "revenue growth",
+    "deposits",
+    "member growth",
+    "cross-sell",
+    "GAAP profitability"
+  ],
+  "bear_case": [
+    "Tech Platform -27%",
+    "fair-value accounting debate",
+    "credit-cycle risk",
+    "SBC",
+    "higher rates"
+  ],
+  "kill_switches": [
+    "financial restatement",
+    "NCO spikes",
+    "Tech Platform fails to recover",
+    "deposit growth stalls"
+  ],
+  "missing_data": [
+    "FCF after SBC",
+    "dilution trend",
+    "third-party validation of fair-value concerns"
+  ],
+  "blocked_by": [
+    "Technology Platform decline",
+    "credit-cycle risk",
+    "SBC/dilution"
+  ],
+  "next_action": "Small starter only; monitor credit and Tech Platform recovery.",
+  "human_approval_required": true
+}

@@ -1,0 +1,63 @@
+{
+  "ticker": "ERII",
+  "company": "Energy Recovery",
+  "model_id": "M13",
+  "decision": "Wait",
+  "risk_score": 7,
+  "position_class": "Speculative Satellite / Wait",
+  "evidence_quality": "Medium-High",
+  "benchmark_etf": [
+    "PHO",
+    "PIO"
+  ],
+  "verified_facts": [
+    "FY2025 revenue $135.0M, -7% YoY",
+    "Q1 2026 revenue $9.7M",
+    "cash/investments $83.3M and no debt",
+    "2026 guidance withdrawn"
+  ],
+  "model_estimates": [],
+  "weak_signals": [],
+  "growth_drivers": [
+    "desalination",
+    "PX Q650",
+    "water scarcity"
+  ],
+  "profitability_quality": "High gross margin but volatile due project timing.",
+  "balance_sheet": "Strong cash and no debt.",
+  "moat": "PX technology moat, efficiency, durability, design-in switching cost.",
+  "valuation": "Forward valuation unreliable due withdrawn guidance.",
+  "bull_case": [
+    "water scarcity",
+    "PX moat",
+    "PX Q650",
+    "cash/no debt",
+    "Middle East expansion"
+  ],
+  "bear_case": [
+    "guidance withdrawn",
+    "Middle East delays",
+    "CEO/CFO transition",
+    "CO2 wind-down",
+    "customer concentration"
+  ],
+  "kill_switches": [
+    "project cancellations",
+    "loss of PX tech leadership",
+    "failed CEO transition",
+    "rising cash burn"
+  ],
+  "missing_data": [
+    "revised guidance",
+    "new CEO",
+    "project timeline",
+    "normalized FCF"
+  ],
+  "blocked_by": [
+    "guidance withdrawn",
+    "CEO/CFO transition",
+    "Middle East project delays"
+  ],
+  "next_action": "Do not buy/add now. Wait for revised guidance and CEO clarity.",
+  "human_approval_required": true
+}
