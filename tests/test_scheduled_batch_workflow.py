@@ -31,13 +31,15 @@ def test_scheduled_batch_workflow_multiline_structure() -> None:
     assert "\n    runs-on: ubuntu-latest\n" in workflow_text
     assert "\n    env:\n      PYTHONPATH: .\n" in workflow_text
     assert "\n    steps:\n" in workflow_text
-
-    assert "run: pytest tests -q" in workflow_text
-    assert "run: python scripts/run_manual_batch.py" in workflow_text
+    assert "\n      - name: Checkout repository\n" in workflow_text
+    assert "\n        uses: actions/checkout@v4\n" in workflow_text
+    assert "\n      - name: Run manual deterministic batch\n        run: python scripts/run_manual_batch.py\n" in workflow_text
     assert (
-        "run: python scripts/append_batch_health_log.py --tests-status passed --batch-status passed"
+        "\n      - name: Append batch health log\n        run: python scripts/append_batch_health_log.py --tests-status passed --batch-status passed\n"
         in workflow_text
     )
+
+    assert "run: pytest tests -q" in workflow_text
     assert (
         "git add data/runs data/dashboard/latest_dashboard_data.json app/dashboard/public/dashboard_data.json data/logs/batch_health_log.jsonl"
         in workflow_text
