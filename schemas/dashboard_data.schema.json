@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DashboardData",
+  "type": "object",
+  "required": [
+    "summary",
+    "command_center",
+    "buy_zone_board",
+    "risk_blocked",
+    "needs_audit",
+    "failed",
+    "warnings",
+    "latest_agent_runs_placeholder"
+  ],
+  "properties": {
+    "summary": {
+      "type": "object",
+      "required": [
+        "total_count",
+        "pass_count",
+        "warning_count",
+        "fail_count",
+        "needs_audit_count",
+        "risk_blocked_count"
+      ],
+      "properties": {
+        "total_count": {"type": "integer", "minimum": 0},
+        "pass_count": {"type": "integer", "minimum": 0},
+        "warning_count": {"type": "integer", "minimum": 0},
+        "fail_count": {"type": "integer", "minimum": 0},
+        "needs_audit_count": {"type": "integer", "minimum": 0},
+        "risk_blocked_count": {"type": "integer", "minimum": 0}
+      }
+    },
+    "command_center": {
+      "type": "object",
+      "required": ["top_candidates", "blocked_names", "needs_review"],
+      "properties": {
+        "top_candidates": {"type": "array", "items": {"$ref": "#/$defs/dashboardItem"}},
+        "blocked_names": {"type": "array", "items": {"$ref": "#/$defs/dashboardItem"}},
+        "needs_review": {"type": "array", "items": {"$ref": "#/$defs/dashboardItem"}}
+      }
+    },
+    "buy_zone_board": {"type": "array", "items": {"$ref": "#/$defs/dashboardItem"}},
+    "risk_blocked": {"type": "array", "items": {"$ref": "#/$defs/dashboardItem"}},
+    "needs_audit": {"type": "array", "items": {"$ref": "#/$defs/dashboardItem"}},
+    "failed": {"type": "array", "items": {"$ref": "#/$defs/dashboardItem"}},
+    "warnings": {"type": "array", "items": {"$ref": "#/$defs/dashboardItem"}},
+    "latest_agent_runs_placeholder": {"type": "array", "items": {"type": "object"}}
+  },
+  "$defs": {
+    "dashboardItem": {
+      "type": "object",
+      "required": [
+        "ticker",
+        "model_id",
+        "pipeline_status",
+        "decision",
+        "risk_score",
+        "position_class",
+        "buy_zone_status",
+        "valuation_status",
+        "blockers",
+        "next_action"
+      ],
+      "properties": {
+        "ticker": {"type": "string"},
+        "model_id": {"type": "string"},
+        "pipeline_status": {"type": "string"},
+        "decision": {"type": "string"},
+        "risk_score": {"type": ["number", "integer", "null"]},
+        "position_class": {"type": "string"},
+        "buy_zone_status": {"type": "string"},
+        "valuation_status": {"type": "string"},
+        "blockers": {"type": "array", "items": {"type": "string"}},
+        "next_action": {"type": "string"}
+      }
+    }
+  }
+}

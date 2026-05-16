@@ -1,0 +1,14 @@
+{
+  "pipeline_results": [
+    {
+      "ticker": "TTEK",
+      "model_id": "M13",
+      "pipeline_status": "Pass",
+      "data_audit": {"buy_zone_status": "In Buy Zone", "valuation_status": "Fair"},
+      "risk_adjusted_audit": {"decision": "Buy", "risk_score": 4, "position_class": "Starter"},
+      "dashboard_card": {"status": "Buy"},
+      "blockers": [],
+      "next_action": "Pipeline passed; proceed to human review/approval for any action."
+    }
+  ]
+}
