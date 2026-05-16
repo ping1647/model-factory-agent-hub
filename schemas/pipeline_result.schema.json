@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PipelineResult",
+  "type": "object",
+  "required": [
+    "ticker",
+    "model_id",
+    "memory_check",
+    "source_requirements",
+    "research_summary",
+    "data_audit",
+    "risk_adjusted_audit",
+    "dashboard_card",
+    "pqa_report",
+    "pipeline_status",
+    "blockers",
+    "next_action"
+  ],
+  "properties": {
+    "ticker": {"type": "string"},
+    "model_id": {"type": "string"},
+    "memory_check": {"type": "object"},
+    "source_requirements": {"type": "object"},
+    "research_summary": {"type": "object"},
+    "data_audit": {"type": "object"},
+    "risk_adjusted_audit": {
+      "anyOf": [
+        {"type": "object"},
+        {"type": "null"}
+      ]
+    },
+    "dashboard_card": {
+      "anyOf": [
+        {"type": "object"},
+        {"type": "null"}
+      ]
+    },
+    "pqa_report": {
+      "anyOf": [
+        {"type": "object"},
+        {"type": "null"}
+      ]
+    },
+    "pipeline_status": {
+      "enum": ["Pass", "Warning", "Fail", "Needs Audit"]
+    },
+    "blockers": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "next_action": {"type": "string"}
+  }
+}
