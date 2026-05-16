@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ModelTrainingEvent",
+  "type": "object",
+  "required": [
+    "ticker",
+    "model_id",
+    "decision_date",
+    "decision",
+    "benchmark_etf",
+    "thesis_summary",
+    "risk_score",
+    "position_class",
+    "evidence_quality",
+    "missing_data",
+    "expected_review_windows",
+    "outcome_status",
+    "lessons",
+    "rule_update_needed",
+    "human_review_required"
+  ],
+  "properties": {
+    "ticker": {"type": "string"},
+    "model_id": {"type": "string"},
+    "decision_date": {"type": "string"},
+    "decision": {"type": "string"},
+    "benchmark_etf": {"type": "array", "items": {"type": "string"}},
+    "thesis_summary": {"type": "string"},
+    "risk_score": {"type": "integer"},
+    "position_class": {"type": "string"},
+    "evidence_quality": {"type": "string"},
+    "missing_data": {"type": "array", "items": {"type": "string"}},
+    "expected_review_windows": {"type": "array", "items": {"type": "string"}},
+    "outcome_status": {"type": "string", "enum": ["Pending", "Win", "Loss", "Mixed"]},
+    "lessons": {"type": "array", "items": {"type": "string"}},
+    "rule_update_needed": {"type": "boolean"},
+    "human_review_required": {"type": "boolean"}
+  }
+}
