@@ -38,11 +38,13 @@ section { margin-top: 1.2rem; }
 .stock-card li { display: grid; grid-template-columns: 140px 1fr; gap: 0.4rem; font-size: 0.9rem; }
 .field { font-weight: 600; color: #364057; }
 
-.tag { padding: 0.1rem 0.45rem; border-radius: 999px; font-size: 0.78rem; text-transform: capitalize; display: inline-block; }
-.tag.ready { background: #d8f4e4; color: #156c3f; }
-.tag.warning, .tag.risk_review { background: #fff0cc; color: #8a6100; }
+.tag { padding: 0.1rem 0.45rem; border-radius: 999px; font-size: 0.78rem; display: inline-block; }
+.tag.pass { background: #d8f4e4; color: #156c3f; }
+.tag.warning, .tag.needs_audit { background: #fff0cc; color: #8a6100; }
 .tag.fail { background: #ffd9dd; color: #8a2030; }
-.tag.decision { background: #e6ecff; color: #1c3c95; }
+.tag.buy, .tag.starter { background: #e6ecff; color: #1c3c95; }
+.tag.wait { background: #f1f3f8; color: #4f5f78; }
+.tag.risk_blocked, .tag.avoid { background: #ffe4e7; color: #96283a; }
 
 @media (max-width: 720px) {
   .stock-card li { grid-template-columns: 1fr; }

@@ -10,6 +10,13 @@ Static React + Vite dashboard scaffold for the future Model Factory web app.
 - No portfolio or account connectivity.
 - Uses local sample data only (`src/sampleDashboardData.js`).
 
+## Data Conventions in This MVP
+
+- `pipeline_status`: `Pass`, `Warning`, `Fail`, `Needs Audit`
+- `decision`: `Buy`, `Starter`, `Wait`, `Risk-Blocked`, `Avoid`
+- `risk_score`: 1-10 scale
+- `blockers`: array of blocker keys (renders as `None` when empty)
+
 ## Included Boards
 
 - Summary cards: total, pass, warning, fail, needs audit, risk blocked
@@ -17,7 +24,7 @@ Static React + Vite dashboard scaffold for the future Model Factory web app.
 - Top Candidates
 - Risk-Blocked
 - Needs Review
-- Buy Zone Board
+- Buy Zone Board (exact `In Buy Zone` matches)
 
 ## Local Run
 

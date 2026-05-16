@@ -6,18 +6,27 @@ const SUMMARY_KEYS = [
   { key: 'warning', label: 'Warning' },
   { key: 'fail', label: 'Fail' },
   { key: 'needs_audit', label: 'Needs Audit' },
-  { key: 'risk_blocked', label: 'Risk Blocked' }
+  { key: 'risk_blocked', label: 'Risk-Blocked' }
 ];
+
+const statusClass = (value) => value.toLowerCase().replace(/\s+/g, '_').replace(/-/g, '_');
 
 function computeSummary(stocks) {
   return {
     total: stocks.length,
-    pass: stocks.filter((s) => s.pipeline_status === 'ready').length,
-    warning: stocks.filter((s) => s.pipeline_status === 'warning').length,
-    fail: stocks.filter((s) => s.pipeline_status === 'fail').length,
-    needs_audit: stocks.filter((s) => s.pipeline_status === 'warning' || s.pipeline_status === 'risk_review').length,
-    risk_blocked: stocks.filter((s) => s.board === 'risk_blocked').length
+    pass: stocks.filter((s) => s.pipeline_status === 'Pass').length,
+    warning: stocks.filter((s) => s.pipeline_status === 'Warning').length,
+    fail: stocks.filter((s) => s.pipeline_status === 'Fail').length,
+    needs_audit: stocks.filter((s) => s.pipeline_status === 'Needs Audit').length,
+    risk_blocked: stocks.filter((s) => s.decision === 'Risk-Blocked' || s.position_class === 'Risk-Blocked').length
   };
+}
+
+function renderBlockers(blockers) {
+  if (!Array.isArray(blockers) || blockers.length === 0) {
+    return 'None';
+  }
+  return blockers.join(', ');
 }
 
 function StockCard({ stock }) {
@@ -26,13 +35,13 @@ function StockCard({ stock }) {
       <h3>{stock.ticker}</h3>
       <ul>
         <li><span className="field">model_id</span><span>{stock.model_id}</span></li>
-        <li><span className="field">pipeline_status</span><span className={`tag ${stock.pipeline_status}`}>{stock.pipeline_status}</span></li>
-        <li><span className="field">decision</span><span className="tag decision">{stock.decision}</span></li>
-        <li><span className="field">risk_score</span><span>{stock.risk_score}</span></li>
+        <li><span className="field">pipeline_status</span><span className={`tag ${statusClass(stock.pipeline_status)}`}>{stock.pipeline_status}</span></li>
+        <li><span className="field">decision</span><span className={`tag ${statusClass(stock.decision)}`}>{stock.decision}</span></li>
+        <li><span className="field">risk_score</span><span>{stock.risk_score} / 10</span></li>
         <li><span className="field">position_class</span><span>{stock.position_class}</span></li>
         <li><span className="field">buy_zone_status</span><span>{stock.buy_zone_status}</span></li>
         <li><span className="field">valuation_status</span><span>{stock.valuation_status}</span></li>
-        <li><span className="field">blockers</span><span>{stock.blockers}</span></li>
+        <li><span className="field">blockers</span><span>{renderBlockers(stock.blockers)}</span></li>
         <li><span className="field">next_action</span><span>{stock.next_action}</span></li>
       </ul>
     </article>
@@ -47,7 +56,7 @@ export default function App() {
     top_candidates: data.stocks.filter((s) => s.board === 'top_candidates'),
     risk_blocked: data.stocks.filter((s) => s.board === 'risk_blocked'),
     needs_review: data.stocks.filter((s) => s.board === 'needs_review'),
-    buy_zone: data.stocks.filter((s) => s.buy_zone_status.includes('buy zone'))
+    buy_zone: data.stocks.filter((s) => s.buy_zone_status === 'In Buy Zone')
   };
 
   return (
