@@ -1,0 +1,310 @@
+{
+  "blockers": [],
+  "model_id": "M13",
+  "next_action": "Pipeline passed; proceed to human review/approval for any action.",
+  "pipeline_result": {
+    "blockers": [],
+    "dashboard_card": {
+      "benchmark_etf": [
+        "PHO",
+        "PIO",
+        "XLU",
+        "VOO"
+      ],
+      "blocked_by": [
+        "2027 visibility limited",
+        "organic growth split missing"
+      ],
+      "company": "Tetra Tech",
+      "decision": "Starter",
+      "freshness": "Needs price/data freshness check",
+      "missing_data": [
+        "organic growth split",
+        "PFAS revenue %",
+        "2027 visibility",
+        "valuation percentile"
+      ],
+      "model_id": "M13",
+      "next_action": "Small starter only; verify official URLs and benchmark alpha before adding.",
+      "position_class": "Core/Satellite Starter",
+      "risk_color": "Yellow",
+      "risk_score": 4,
+      "status": "Starter",
+      "ticker": "TTEK"
+    },
+    "data_audit": {
+      "benchmark_etf": [
+        "PHO",
+        "PIO"
+      ],
+      "benchmark_status": "Present",
+      "buy_zone_high": 48.0,
+      "buy_zone_low": 44.0,
+      "buy_zone_status": "In Buy Zone",
+      "current_price": 46.5,
+      "data_quality": "Usable",
+      "decision_blockers": [],
+      "eps_guidance_midpoint": 1.95,
+      "forward_pe": 23.846153846153847,
+      "gap_to_buy_zone_pct": 0.0,
+      "model_id": "M13",
+      "next_action": "Proceed to risk review",
+      "price_as_of": "2026-05-16",
+      "price_freshness_status": "Fresh",
+      "stale_price": false,
+      "ticker": "TTEK",
+      "valuation_status": "Computed"
+    },
+    "memory_check": {
+      "failures": [],
+      "missing_context_keys": [],
+      "next_action": "Proceed: required memory context is complete, fresh, and supported.",
+      "passed": true,
+      "severity": "Pass",
+      "stale_context_keys": [],
+      "unsupported_model_ids": [],
+      "warnings": []
+    },
+    "model_id": "M13",
+    "next_action": "Pipeline passed; proceed to human review/approval for any action.",
+    "pipeline_status": "Pass",
+    "pqa_report": {
+      "checks": [],
+      "failures": [],
+      "next_action": "Ready for publication",
+      "passed": true,
+      "severity": "Pass",
+      "ticker": "TTEK",
+      "warnings": []
+    },
+    "research_summary": {
+      "balance_sheet": "Missing Data",
+      "bear_case": [],
+      "bull_case": [],
+      "evidence_quality": "Missing Data",
+      "growth_drivers": [],
+      "kill_switches": [],
+      "missing_data": [
+        "sec_10k_or_annual_report",
+        "sec_10q_or_quarterly_report",
+        "latest_earnings_release",
+        "latest_earnings_call_transcript",
+        "investor_presentation",
+        "current_price_and_market_data",
+        "backlog_and_project_awards",
+        "pfas_and_water_regulatory_developments",
+        "customer_concentration_exposure",
+        "project_timing_and_guidance"
+      ],
+      "moat": "Missing Data",
+      "model_estimates": [],
+      "model_id": "M13",
+      "next_action": "Collect and verify required sources before audit decision.",
+      "preliminary_decision": "Wait",
+      "profitability_quality": "Missing Data",
+      "source_checklist": [
+        {
+          "required": true,
+          "source_type": "sec_10k_or_annual_report",
+          "tier": "primary",
+          "why_needed": "Anchor long-term fundamentals, risks, and accounting disclosures."
+        },
+        {
+          "required": true,
+          "source_type": "sec_10q_or_quarterly_report",
+          "tier": "primary",
+          "why_needed": "Capture latest quarter operating trends and balance-sheet updates."
+        },
+        {
+          "required": true,
+          "source_type": "latest_earnings_release",
+          "tier": "primary",
+          "why_needed": "Confirm reported results, guidance, and management commentary."
+        },
+        {
+          "required": true,
+          "source_type": "latest_earnings_call_transcript",
+          "tier": "primary",
+          "why_needed": "Validate qualitative signals, Q&A details, and management tone."
+        },
+        {
+          "required": true,
+          "source_type": "investor_presentation",
+          "tier": "secondary",
+          "why_needed": "Cross-check segment KPIs and strategic priorities highlighted to investors."
+        },
+        {
+          "required": true,
+          "source_type": "current_price_and_market_data",
+          "tier": "primary",
+          "why_needed": "Support valuation discipline, benchmark-relative checks, and freshness control."
+        },
+        {
+          "required": true,
+          "source_type": "backlog_and_project_awards",
+          "tier": "primary",
+          "why_needed": "Validate demand visibility and conversion potential."
+        },
+        {
+          "required": true,
+          "source_type": "pfas_and_water_regulatory_developments",
+          "tier": "primary",
+          "why_needed": "Map regulatory-driven spending catalysts and timing risk."
+        },
+        {
+          "required": true,
+          "source_type": "customer_concentration_exposure",
+          "tier": "secondary",
+          "why_needed": "Measure dependence on large municipal or industrial customers."
+        },
+        {
+          "required": true,
+          "source_type": "project_timing_and_guidance",
+          "tier": "primary",
+          "why_needed": "Check revenue conversion timing and execution consistency."
+        }
+      ],
+      "ticker": "TTEK",
+      "valuation": "Missing Data",
+      "verified_facts": [],
+      "weak_signals": []
+    },
+    "risk_adjusted_audit": {
+      "balance_sheet": "Low leverage and strong operating cash flow.",
+      "bear_case": [
+        "state/local guidance reduced",
+        "commercial weakness",
+        "shorter backlog",
+        "limited 2027 visibility"
+      ],
+      "benchmark_etf": [
+        "PHO",
+        "PIO",
+        "XLU",
+        "VOO"
+      ],
+      "blocked_by": [
+        "2027 visibility limited",
+        "organic growth split missing"
+      ],
+      "bull_case": [
+        "cash flow",
+        "low leverage",
+        "water/PFAS demand",
+        "backlog growth",
+        "margin expansion"
+      ],
+      "company": "Tetra Tech",
+      "decision": "Starter",
+      "evidence_quality": "Medium-High",
+      "growth_drivers": [
+        "water",
+        "PFAS",
+        "environmental infrastructure",
+        "defense/federal"
+      ],
+      "human_approval_required": true,
+      "kill_switches": [
+        "budget cuts",
+        "fixed-price cost overruns",
+        "margin compression",
+        "backlog deterioration"
+      ],
+      "missing_data": [
+        "organic growth split",
+        "PFAS revenue %",
+        "2027 visibility",
+        "valuation percentile"
+      ],
+      "moat": "Technical consulting scale and water/environment expertise.",
+      "model_estimates": [
+        "Forward P/E about 17x using FY2026 adjusted EPS midpoint"
+      ],
+      "model_id": "M13",
+      "next_action": "Small starter only; verify official URLs and benchmark alpha before adding.",
+      "position_class": "Core/Satellite Starter",
+      "profitability_quality": "Strong cash flow and margin expansion, but fixed-price mix requires cost execution discipline.",
+      "risk_score": 4,
+      "ticker": "TTEK",
+      "valuation": "Reasonable for starter, not heavy buy without organic growth and 2027 visibility.",
+      "verified_facts": [
+        "Q2 FY2026 net revenue $1.05B, +8% YoY",
+        "EBITDA $146M",
+        "Backlog $4.28B",
+        "Net debt/EBITDA 1.0x"
+      ],
+      "weak_signals": []
+    },
+    "source_requirements": {
+      "model_id": "M13",
+      "source_requirements": [
+        {
+          "required": true,
+          "source_type": "sec_10k_or_annual_report",
+          "tier": "primary",
+          "why_needed": "Anchor long-term fundamentals, risks, and accounting disclosures."
+        },
+        {
+          "required": true,
+          "source_type": "sec_10q_or_quarterly_report",
+          "tier": "primary",
+          "why_needed": "Capture latest quarter operating trends and balance-sheet updates."
+        },
+        {
+          "required": true,
+          "source_type": "latest_earnings_release",
+          "tier": "primary",
+          "why_needed": "Confirm reported results, guidance, and management commentary."
+        },
+        {
+          "required": true,
+          "source_type": "latest_earnings_call_transcript",
+          "tier": "primary",
+          "why_needed": "Validate qualitative signals, Q&A details, and management tone."
+        },
+        {
+          "required": true,
+          "source_type": "investor_presentation",
+          "tier": "secondary",
+          "why_needed": "Cross-check segment KPIs and strategic priorities highlighted to investors."
+        },
+        {
+          "required": true,
+          "source_type": "current_price_and_market_data",
+          "tier": "primary",
+          "why_needed": "Support valuation discipline, benchmark-relative checks, and freshness control."
+        },
+        {
+          "required": true,
+          "source_type": "backlog_and_project_awards",
+          "tier": "primary",
+          "why_needed": "Validate demand visibility and conversion potential."
+        },
+        {
+          "required": true,
+          "source_type": "pfas_and_water_regulatory_developments",
+          "tier": "primary",
+          "why_needed": "Map regulatory-driven spending catalysts and timing risk."
+        },
+        {
+          "required": true,
+          "source_type": "customer_concentration_exposure",
+          "tier": "secondary",
+          "why_needed": "Measure dependence on large municipal or industrial customers."
+        },
+        {
+          "required": true,
+          "source_type": "project_timing_and_guidance",
+          "tier": "primary",
+          "why_needed": "Check revenue conversion timing and execution consistency."
+        }
+      ],
+      "ticker": "TTEK"
+    },
+    "ticker": "TTEK"
+  },
+  "pipeline_status": "Pass",
+  "run_date": "2026-05-16",
+  "run_id": "manual-test-001",
+  "ticker": "TTEK"
+}

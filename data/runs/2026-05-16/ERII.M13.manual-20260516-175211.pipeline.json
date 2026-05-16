@@ -1,0 +1,312 @@
+{
+  "blockers": [
+    "guidance_withdrawn"
+  ],
+  "model_id": "M13",
+  "next_action": "Resolve blockers before proceeding with any decision output.",
+  "pipeline_result": {
+    "blockers": [
+      "guidance_withdrawn"
+    ],
+    "dashboard_card": {
+      "benchmark_etf": [
+        "PHO",
+        "PIO"
+      ],
+      "blocked_by": [
+        "CEO/CFO transition",
+        "Middle East project delays",
+        "guidance withdrawn"
+      ],
+      "company": "Energy Recovery",
+      "decision": "Wait",
+      "freshness": "Needs price/data freshness check",
+      "missing_data": [
+        "revised guidance",
+        "new CEO",
+        "project timeline",
+        "normalized FCF"
+      ],
+      "model_id": "M13",
+      "next_action": "Do not buy/add now. Wait for revised guidance and CEO clarity.",
+      "position_class": "Speculative Satellite / Wait",
+      "risk_color": "Orange",
+      "risk_score": 7,
+      "status": "Risk-Blocked",
+      "ticker": "ERII"
+    },
+    "data_audit": {
+      "benchmark_etf": [
+        "PHO",
+        "PIO"
+      ],
+      "benchmark_status": "Present",
+      "buy_zone_high": 17.5,
+      "buy_zone_low": 15.0,
+      "buy_zone_status": "Above Buy Zone",
+      "current_price": 18.2,
+      "data_quality": "Blocked",
+      "decision_blockers": [
+        "guidance_withdrawn"
+      ],
+      "eps_guidance_midpoint": 0.36,
+      "forward_pe": 50.55555555555556,
+      "gap_to_buy_zone_pct": 3.999999999999996,
+      "model_id": "M13",
+      "next_action": "Resolve decision blockers",
+      "price_as_of": "2026-05-16",
+      "price_freshness_status": "Fresh",
+      "stale_price": false,
+      "ticker": "ERII",
+      "valuation_status": "Unreliable - Guidance Withdrawn"
+    },
+    "memory_check": {
+      "failures": [],
+      "missing_context_keys": [],
+      "next_action": "Proceed: required memory context is complete, fresh, and supported.",
+      "passed": true,
+      "severity": "Pass",
+      "stale_context_keys": [],
+      "unsupported_model_ids": [],
+      "warnings": []
+    },
+    "model_id": "M13",
+    "next_action": "Resolve blockers before proceeding with any decision output.",
+    "pipeline_status": "Fail",
+    "pqa_report": {
+      "checks": [],
+      "failures": [],
+      "next_action": "Ready for publication",
+      "passed": true,
+      "severity": "Pass",
+      "ticker": "ERII",
+      "warnings": []
+    },
+    "research_summary": {
+      "balance_sheet": "Missing Data",
+      "bear_case": [],
+      "bull_case": [],
+      "evidence_quality": "Missing Data",
+      "growth_drivers": [],
+      "kill_switches": [],
+      "missing_data": [
+        "sec_10k_or_annual_report",
+        "sec_10q_or_quarterly_report",
+        "latest_earnings_release",
+        "latest_earnings_call_transcript",
+        "investor_presentation",
+        "current_price_and_market_data",
+        "backlog_and_project_awards",
+        "pfas_and_water_regulatory_developments",
+        "customer_concentration_exposure",
+        "project_timing_and_guidance"
+      ],
+      "moat": "Missing Data",
+      "model_estimates": [],
+      "model_id": "M13",
+      "next_action": "Collect and verify required sources before audit decision.",
+      "preliminary_decision": "Wait",
+      "profitability_quality": "Missing Data",
+      "source_checklist": [
+        {
+          "required": true,
+          "source_type": "sec_10k_or_annual_report",
+          "tier": "primary",
+          "why_needed": "Anchor long-term fundamentals, risks, and accounting disclosures."
+        },
+        {
+          "required": true,
+          "source_type": "sec_10q_or_quarterly_report",
+          "tier": "primary",
+          "why_needed": "Capture latest quarter operating trends and balance-sheet updates."
+        },
+        {
+          "required": true,
+          "source_type": "latest_earnings_release",
+          "tier": "primary",
+          "why_needed": "Confirm reported results, guidance, and management commentary."
+        },
+        {
+          "required": true,
+          "source_type": "latest_earnings_call_transcript",
+          "tier": "primary",
+          "why_needed": "Validate qualitative signals, Q&A details, and management tone."
+        },
+        {
+          "required": true,
+          "source_type": "investor_presentation",
+          "tier": "secondary",
+          "why_needed": "Cross-check segment KPIs and strategic priorities highlighted to investors."
+        },
+        {
+          "required": true,
+          "source_type": "current_price_and_market_data",
+          "tier": "primary",
+          "why_needed": "Support valuation discipline, benchmark-relative checks, and freshness control."
+        },
+        {
+          "required": true,
+          "source_type": "backlog_and_project_awards",
+          "tier": "primary",
+          "why_needed": "Validate demand visibility and conversion potential."
+        },
+        {
+          "required": true,
+          "source_type": "pfas_and_water_regulatory_developments",
+          "tier": "primary",
+          "why_needed": "Map regulatory-driven spending catalysts and timing risk."
+        },
+        {
+          "required": true,
+          "source_type": "customer_concentration_exposure",
+          "tier": "secondary",
+          "why_needed": "Measure dependence on large municipal or industrial customers."
+        },
+        {
+          "required": true,
+          "source_type": "project_timing_and_guidance",
+          "tier": "primary",
+          "why_needed": "Check revenue conversion timing and execution consistency."
+        }
+      ],
+      "ticker": "ERII",
+      "valuation": "Missing Data",
+      "verified_facts": [],
+      "weak_signals": []
+    },
+    "risk_adjusted_audit": {
+      "balance_sheet": "Strong cash and no debt.",
+      "bear_case": [
+        "guidance withdrawn",
+        "Middle East delays",
+        "CEO/CFO transition",
+        "CO2 wind-down",
+        "customer concentration"
+      ],
+      "benchmark_etf": [
+        "PHO",
+        "PIO"
+      ],
+      "blocked_by": [
+        "CEO/CFO transition",
+        "Middle East project delays",
+        "guidance withdrawn"
+      ],
+      "bull_case": [
+        "water scarcity",
+        "PX moat",
+        "PX Q650",
+        "cash/no debt",
+        "Middle East expansion"
+      ],
+      "company": "Energy Recovery",
+      "decision": "Wait",
+      "evidence_quality": "Medium-High",
+      "growth_drivers": [
+        "desalination",
+        "PX Q650",
+        "water scarcity"
+      ],
+      "human_approval_required": true,
+      "kill_switches": [
+        "project cancellations",
+        "loss of PX tech leadership",
+        "failed CEO transition",
+        "rising cash burn"
+      ],
+      "missing_data": [
+        "revised guidance",
+        "new CEO",
+        "project timeline",
+        "normalized FCF"
+      ],
+      "moat": "PX technology moat, efficiency, durability, design-in switching cost.",
+      "model_estimates": [],
+      "model_id": "M13",
+      "next_action": "Do not buy/add now. Wait for revised guidance and CEO clarity.",
+      "position_class": "Speculative Satellite / Wait",
+      "profitability_quality": "High gross margin but volatile due project timing.",
+      "risk_score": 7,
+      "ticker": "ERII",
+      "valuation": "Forward valuation unreliable due withdrawn guidance.",
+      "verified_facts": [
+        "FY2025 revenue $135.0M, -7% YoY",
+        "Q1 2026 revenue $9.7M",
+        "cash/investments $83.3M and no debt",
+        "2026 guidance withdrawn"
+      ],
+      "weak_signals": []
+    },
+    "source_requirements": {
+      "model_id": "M13",
+      "source_requirements": [
+        {
+          "required": true,
+          "source_type": "sec_10k_or_annual_report",
+          "tier": "primary",
+          "why_needed": "Anchor long-term fundamentals, risks, and accounting disclosures."
+        },
+        {
+          "required": true,
+          "source_type": "sec_10q_or_quarterly_report",
+          "tier": "primary",
+          "why_needed": "Capture latest quarter operating trends and balance-sheet updates."
+        },
+        {
+          "required": true,
+          "source_type": "latest_earnings_release",
+          "tier": "primary",
+          "why_needed": "Confirm reported results, guidance, and management commentary."
+        },
+        {
+          "required": true,
+          "source_type": "latest_earnings_call_transcript",
+          "tier": "primary",
+          "why_needed": "Validate qualitative signals, Q&A details, and management tone."
+        },
+        {
+          "required": true,
+          "source_type": "investor_presentation",
+          "tier": "secondary",
+          "why_needed": "Cross-check segment KPIs and strategic priorities highlighted to investors."
+        },
+        {
+          "required": true,
+          "source_type": "current_price_and_market_data",
+          "tier": "primary",
+          "why_needed": "Support valuation discipline, benchmark-relative checks, and freshness control."
+        },
+        {
+          "required": true,
+          "source_type": "backlog_and_project_awards",
+          "tier": "primary",
+          "why_needed": "Validate demand visibility and conversion potential."
+        },
+        {
+          "required": true,
+          "source_type": "pfas_and_water_regulatory_developments",
+          "tier": "primary",
+          "why_needed": "Map regulatory-driven spending catalysts and timing risk."
+        },
+        {
+          "required": true,
+          "source_type": "customer_concentration_exposure",
+          "tier": "secondary",
+          "why_needed": "Measure dependence on large municipal or industrial customers."
+        },
+        {
+          "required": true,
+          "source_type": "project_timing_and_guidance",
+          "tier": "primary",
+          "why_needed": "Check revenue conversion timing and execution consistency."
+        }
+      ],
+      "ticker": "ERII"
+    },
+    "ticker": "ERII"
+  },
+  "pipeline_status": "Fail",
+  "run_date": "2026-05-16",
+  "run_id": "manual-20260516-175211",
+  "ticker": "ERII"
+}
