@@ -13,3 +13,12 @@ This system is decision-support only. It must never execute buy/sell orders.
 - TTEK = Final Audit V1 / Starter / Core-Satellite
 - ERII = Final Audit V1 / Wait / Risk-Blocked
 - SOFI = Final Audit V1 / Starter / High-Beta Satellite
+
+## Manual Batch Workflow (v0.1)
+
+Use `python scripts/run_manual_batch.py` to run a deterministic local batch using:
+- active tickers from `data/watchlists/master_watchlist.json`
+- local market seed inputs from `data/market_inputs/manual_batch_market_inputs.json`
+- local base audits (when available) from `data/examples/*.audit.json`
+
+The script persists run records under `data/runs/`, exports `data/dashboard/latest_dashboard_data.json`, and mirrors the same dashboard payload to `app/dashboard/public/dashboard_data.json` for frontend use.

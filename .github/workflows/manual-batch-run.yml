@@ -1,0 +1,42 @@
+name: Manual Batch Run
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  manual-batch-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install test dependencies
+        run: python -m pip install pytest
+
+      - name: Run test suite
+        run: pytest tests -q
+
+      - name: Run manual deterministic batch
+        run: python scripts/run_manual_batch.py
+
+      - name: Commit generated artifacts
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/runs data/dashboard/latest_dashboard_data.json app/dashboard/public/dashboard_data.json
+          if git diff --cached --quiet; then
+            echo "No generated changes to commit"
+            exit 0
+          fi
+          git commit -m "chore: persist manual batch outputs"
+          git push origin HEAD:main
