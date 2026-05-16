@@ -40,6 +40,13 @@ npm run build
 npm run preview
 ```
 
+## GitHub Pages Deployment
+
+This dashboard deploys from GitHub Actions on pushes to `main` via `.github/workflows/deploy-dashboard-pages.yml`.
+
+- Vite base path is set to `/model-factory-agent-hub/` for Pages hosting.
+- The workflow builds `app/dashboard` and deploys `app/dashboard/dist` to GitHub Pages.
+
 ## Notes
 
 This is an MVP presentation layer intended for dashboard UX iteration.
