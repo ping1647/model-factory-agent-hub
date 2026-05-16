@@ -30,6 +30,7 @@ def test_load_base_audits_skips_missing(tmp_path):
 
 def test_main_runs_and_writes_dashboard_outputs(tmp_path, monkeypatch):
     root = Path(__file__).resolve().parents[1]
+    output_runs = tmp_path / "runs"
     output_dashboard = tmp_path / "dashboard" / "latest_dashboard_data.json"
     output_public = tmp_path / "public" / "dashboard_data.json"
 
@@ -41,6 +42,8 @@ def test_main_runs_and_writes_dashboard_outputs(tmp_path, monkeypatch):
             "manual-test-001",
             "--run-date",
             "2026-05-16",
+            "--run-output-dir",
+            str(output_runs),
             "--dashboard-output-path",
             str(output_dashboard),
             "--dashboard-public-path",
@@ -57,6 +60,7 @@ def test_main_runs_and_writes_dashboard_outputs(tmp_path, monkeypatch):
 
     assert output_dashboard.exists()
     assert output_public.exists()
+    assert output_runs.exists()
 
     payload = json.loads(output_dashboard.read_text(encoding="utf-8"))
     assert "summary" in payload

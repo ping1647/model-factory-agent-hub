@@ -66,6 +66,7 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Run manual deterministic watchlist batch")
     parser.add_argument("--run-id", default=None)
     parser.add_argument("--run-date", default=None)
+    parser.add_argument("--run-output-dir", default=DEFAULT_RUN_OUTPUT_DIR)
     parser.add_argument("--watchlist-path", default=DEFAULT_WATCHLIST_PATH)
     parser.add_argument("--market-inputs-path", default=DEFAULT_MARKET_INPUTS_PATH)
     parser.add_argument("--dashboard-output-path", default=DEFAULT_DASHBOARD_OUTPUT_PATH)
@@ -95,7 +96,7 @@ def main() -> int:
         model_factor_matrix=model_factor_matrix,
         market_inputs_by_ticker=market_inputs_by_ticker,
         base_audits_by_ticker=base_audits_by_ticker,
-        run_output_dir=DEFAULT_RUN_OUTPUT_DIR,
+        run_output_dir=args.run_output_dir,
         dashboard_output_path=args.dashboard_output_path,
     )
 
