@@ -1,0 +1,190 @@
+{
+  "common": [
+    {
+      "source_type": "sec_10k_or_annual_report",
+      "tier": "primary",
+      "why_needed": "Anchor long-term fundamentals, risks, and accounting disclosures.",
+      "required": true
+    },
+    {
+      "source_type": "sec_10q_or_quarterly_report",
+      "tier": "primary",
+      "why_needed": "Capture latest quarter operating trends and balance-sheet updates.",
+      "required": true
+    },
+    {
+      "source_type": "latest_earnings_release",
+      "tier": "primary",
+      "why_needed": "Confirm reported results, guidance, and management commentary.",
+      "required": true
+    },
+    {
+      "source_type": "latest_earnings_call_transcript",
+      "tier": "primary",
+      "why_needed": "Validate qualitative signals, Q&A details, and management tone.",
+      "required": true
+    },
+    {
+      "source_type": "investor_presentation",
+      "tier": "secondary",
+      "why_needed": "Cross-check segment KPIs and strategic priorities highlighted to investors.",
+      "required": true
+    },
+    {
+      "source_type": "current_price_and_market_data",
+      "tier": "primary",
+      "why_needed": "Support valuation discipline, benchmark-relative checks, and freshness control.",
+      "required": true
+    }
+  ],
+  "models": {
+    "M5": [
+      {
+        "source_type": "deposits_and_funding_mix",
+        "tier": "primary",
+        "why_needed": "Validate deposit growth, mix shifts, and funding durability.",
+        "required": true
+      },
+      {
+        "source_type": "net_interest_margin_trend",
+        "tier": "primary",
+        "why_needed": "Measure unit economics sensitivity to rates and funding costs.",
+        "required": true
+      },
+      {
+        "source_type": "credit_quality_nco_and_delinquency",
+        "tier": "primary",
+        "why_needed": "Assess underwriting quality and emerging credit stress.",
+        "required": true
+      },
+      {
+        "source_type": "capital_ratio_and_liquidity",
+        "tier": "primary",
+        "why_needed": "Confirm balance-sheet resilience and regulatory cushion.",
+        "required": true
+      },
+      {
+        "source_type": "sbc_and_share_dilution",
+        "tier": "secondary",
+        "why_needed": "Quantify per-share dilution and compensation drag.",
+        "required": true
+      },
+      {
+        "source_type": "fair_value_and_accounting_risk",
+        "tier": "secondary",
+        "why_needed": "Surface earnings volatility and estimate uncertainty from fair-value marks.",
+        "required": true
+      }
+    ],
+    "M6": [
+      {
+        "source_type": "fda_and_regulatory_updates",
+        "tier": "primary",
+        "why_needed": "Track approvals, warnings, and filing status changes.",
+        "required": true
+      },
+      {
+        "source_type": "product_and_pipeline_progress",
+        "tier": "primary",
+        "why_needed": "Verify launch momentum and clinical milestone execution.",
+        "required": true
+      },
+      {
+        "source_type": "reimbursement_and_payer_risk",
+        "tier": "secondary",
+        "why_needed": "Test pricing durability, coverage expansion, and access risk.",
+        "required": true
+      },
+      {
+        "source_type": "safety_and_litigation_exposure",
+        "tier": "secondary",
+        "why_needed": "Identify label, adverse-event, and legal downside tail risk.",
+        "required": true
+      }
+    ],
+    "M13": [
+      {
+        "source_type": "backlog_and_project_awards",
+        "tier": "primary",
+        "why_needed": "Validate demand visibility and conversion potential.",
+        "required": true
+      },
+      {
+        "source_type": "pfas_and_water_regulatory_developments",
+        "tier": "primary",
+        "why_needed": "Map regulatory-driven spending catalysts and timing risk.",
+        "required": true
+      },
+      {
+        "source_type": "customer_concentration_exposure",
+        "tier": "secondary",
+        "why_needed": "Measure dependence on large municipal or industrial customers.",
+        "required": true
+      },
+      {
+        "source_type": "project_timing_and_guidance",
+        "tier": "primary",
+        "why_needed": "Check revenue conversion timing and execution consistency.",
+        "required": true
+      }
+    ],
+    "M7": [
+      {
+        "source_type": "segment_revenue_mix",
+        "tier": "primary",
+        "why_needed": "Determine which end-markets are driving incremental growth.",
+        "required": true
+      },
+      {
+        "source_type": "gross_margin_drivers",
+        "tier": "primary",
+        "why_needed": "Assess pricing power, mix quality, and cost leverage.",
+        "required": true
+      },
+      {
+        "source_type": "customer_concentration",
+        "tier": "secondary",
+        "why_needed": "Estimate dependence on hyperscalers and major OEMs.",
+        "required": true
+      },
+      {
+        "source_type": "supply_chain_and_capacity",
+        "tier": "secondary",
+        "why_needed": "Evaluate foundry, packaging, and component bottleneck risk.",
+        "required": true
+      },
+      {
+        "source_type": "export_control_and_regulatory",
+        "tier": "primary",
+        "why_needed": "Capture constraints from export rules and policy changes.",
+        "required": true
+      }
+    ],
+    "M14": [
+      {
+        "source_type": "ppa_and_contract_quality",
+        "tier": "primary",
+        "why_needed": "Verify revenue visibility, tenor, and counterparty strength.",
+        "required": true
+      },
+      {
+        "source_type": "regulatory_and_rate_case",
+        "tier": "primary",
+        "why_needed": "Track recoverability and tariff-related earnings sensitivity.",
+        "required": true
+      },
+      {
+        "source_type": "capex_and_debt_funding",
+        "tier": "secondary",
+        "why_needed": "Assess financing feasibility and balance-sheet stress.",
+        "required": true
+      },
+      {
+        "source_type": "data_center_load_and_customer_demand",
+        "tier": "primary",
+        "why_needed": "Validate AI-load demand durability and concentration risk.",
+        "required": true
+      }
+    ]
+  }
+}
