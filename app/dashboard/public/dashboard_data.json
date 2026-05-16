@@ -1,0 +1,71 @@
+{
+  "generated_at": "2026-05-16T00:00:00Z",
+  "summary": {
+    "total": 3,
+    "pass": 1,
+    "warning": 2,
+    "fail": 0,
+    "needs_audit": 0,
+    "risk_blocked": 1
+  },
+  "command_center": {
+    "mode": "Deterministic JSON Feed",
+    "data_source": "dashboard_data_builder.py output",
+    "benchmark": "SPY",
+    "note": "No database, no login, no external APIs.",
+    "top_candidates": ["TTEK"],
+    "blocked_names": ["ERII"],
+    "needs_review": ["SOFI"]
+  },
+  "buy_zone_board": [
+    {
+      "ticker": "TTEK",
+      "model_id": "M13",
+      "pipeline_status": "Pass",
+      "decision": "Starter",
+      "risk_score": 4,
+      "position_class": "Top Candidate",
+      "buy_zone_status": "In Buy Zone",
+      "valuation_status": "Attractive",
+      "blockers": [],
+      "next_action": "Confirm fresh price and prepare starter sizing for human approval"
+    }
+  ],
+  "risk_blocked": [
+    {
+      "ticker": "ERII",
+      "model_id": "M13",
+      "pipeline_status": "Warning",
+      "decision": "Wait",
+      "risk_score": 7,
+      "position_class": "Risk-Blocked",
+      "buy_zone_status": "Near Buy Zone",
+      "valuation_status": "Mixed",
+      "blockers": ["guidance_withdrawn"],
+      "next_action": "Hold risk-blocked until guidance clarity improves"
+    }
+  ],
+  "needs_audit": [],
+  "failed": [],
+  "warnings": [
+    {
+      "ticker": "SOFI",
+      "model_id": "M5",
+      "pipeline_status": "Warning",
+      "decision": "Starter",
+      "risk_score": 7,
+      "position_class": "High-Beta Starter",
+      "buy_zone_status": "Watchlist Range",
+      "valuation_status": "Fair",
+      "blockers": ["needs_review"],
+      "next_action": "Complete missing-data checks before any sizing changes"
+    }
+  ],
+  "latest_agent_runs_placeholder": [
+    {
+      "agent": "Memory Librarian",
+      "status": "placeholder",
+      "message": "Latest run tracking will be wired in a later release"
+    }
+  ]
+}

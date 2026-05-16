@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { sampleDashboardData } from './sampleDashboardData';
 
 const SUMMARY_KEYS = [
@@ -9,24 +10,31 @@ const SUMMARY_KEYS = [
   { key: 'risk_blocked', label: 'Risk-Blocked' }
 ];
 
-const statusClass = (value) => value.toLowerCase().replace(/\s+/g, '_').replace(/-/g, '_');
-
-function computeSummary(stocks) {
-  return {
-    total: stocks.length,
-    pass: stocks.filter((s) => s.pipeline_status === 'Pass').length,
-    warning: stocks.filter((s) => s.pipeline_status === 'Warning').length,
-    fail: stocks.filter((s) => s.pipeline_status === 'Fail').length,
-    needs_audit: stocks.filter((s) => s.pipeline_status === 'Needs Audit').length,
-    risk_blocked: stocks.filter((s) => s.decision === 'Risk-Blocked' || s.position_class === 'Risk-Blocked').length
-  };
-}
+const statusClass = (value = '') => value.toLowerCase().replace(/\s+/g, '_').replace(/-/g, '_');
 
 function renderBlockers(blockers) {
   if (!Array.isArray(blockers) || blockers.length === 0) {
     return 'None';
   }
   return blockers.join(', ');
+}
+
+function renderTickerList(list) {
+  if (!Array.isArray(list) || list.length === 0) {
+    return 'None';
+  }
+  return list.join(', ');
+}
+
+async function fetchDashboardData() {
+  const paths = ['/model-factory-agent-hub/dashboard_data.json', '/dashboard_data.json'];
+  for (const path of paths) {
+    const response = await fetch(path);
+    if (response.ok) {
+      return await response.json();
+    }
+  }
+  throw new Error('Unable to load dashboard_data.json from known paths');
 }
 
 function StockCard({ stock }) {
@@ -49,21 +57,55 @@ function StockCard({ stock }) {
 }
 
 export default function App() {
-  const data = sampleDashboardData;
-  const summary = computeSummary(data.stocks);
+  const [data, setData] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [loadError, setLoadError] = useState(null);
 
-  const sections = {
-    top_candidates: data.stocks.filter((s) => s.board === 'top_candidates'),
-    risk_blocked: data.stocks.filter((s) => s.board === 'risk_blocked'),
-    needs_review: data.stocks.filter((s) => s.board === 'needs_review'),
-    buy_zone: data.stocks.filter((s) => s.buy_zone_status === 'In Buy Zone')
-  };
+  useEffect(() => {
+    let isMounted = true;
+
+    const loadData = async () => {
+      setIsLoading(true);
+      try {
+        const jsonData = await fetchDashboardData();
+        if (!isMounted) return;
+        setData(jsonData);
+        setLoadError(null);
+      } catch (error) {
+        if (!isMounted) return;
+        setData(sampleDashboardData);
+        setLoadError(error.message);
+      } finally {
+        if (isMounted) {
+          setIsLoading(false);
+        }
+      }
+    };
+
+    loadData();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  if (isLoading) {
+    return (
+      <main className="app-shell">
+        <header>
+          <h1>Model Factory Dashboard MVP v0.1</h1>
+        </header>
+        <p className="muted">Loading dashboard data…</p>
+      </main>
+    );
+  }
 
   return (
     <main className="app-shell">
       <header>
         <h1>Model Factory Dashboard MVP v0.1</h1>
         <p className="muted">Generated: {new Date(data.generated_at).toLocaleString()}</p>
+        {loadError && <p className="muted">Using fallback sample data: {loadError}</p>}
       </header>
 
       <section>
@@ -72,7 +114,7 @@ export default function App() {
           {SUMMARY_KEYS.map((item) => (
             <div className="summary-card" key={item.key}>
               <p className="summary-label">{item.label}</p>
-              <p className="summary-value">{summary[item.key]}</p>
+              <p className="summary-value">{data.summary?.[item.key] ?? 0}</p>
             </div>
           ))}
         </div>
@@ -80,30 +122,38 @@ export default function App() {
 
       <section className="command-center">
         <h2>Command Center</h2>
-        <p><span className="field">Mode:</span> {data.command_center.mode}</p>
-        <p><span className="field">Data Source:</span> {data.command_center.data_source}</p>
-        <p><span className="field">Benchmark:</span> {data.command_center.benchmark}</p>
-        <p><span className="field">Note:</span> {data.command_center.note}</p>
-      </section>
-
-      <section>
-        <h2>Top Candidates</h2>
-        <div className="card-grid">{sections.top_candidates.map((s) => <StockCard stock={s} key={s.ticker} />)}</div>
-      </section>
-
-      <section>
-        <h2>Risk-Blocked</h2>
-        <div className="card-grid">{sections.risk_blocked.map((s) => <StockCard stock={s} key={s.ticker} />)}</div>
-      </section>
-
-      <section>
-        <h2>Needs Review</h2>
-        <div className="card-grid">{sections.needs_review.map((s) => <StockCard stock={s} key={s.ticker} />)}</div>
+        <p><span className="field">Mode:</span> {data.command_center?.mode}</p>
+        <p><span className="field">Data Source:</span> {data.command_center?.data_source}</p>
+        <p><span className="field">Benchmark:</span> {data.command_center?.benchmark}</p>
+        <p><span className="field">Note:</span> {data.command_center?.note}</p>
+        <p><span className="field">Top Candidates:</span> {renderTickerList(data.command_center?.top_candidates)}</p>
+        <p><span className="field">Blocked Names:</span> {renderTickerList(data.command_center?.blocked_names)}</p>
+        <p><span className="field">Needs Review:</span> {renderTickerList(data.command_center?.needs_review)}</p>
       </section>
 
       <section>
         <h2>Buy Zone Board</h2>
-        <div className="card-grid">{sections.buy_zone.map((s) => <StockCard stock={s} key={`${s.ticker}-buy-zone`} />)}</div>
+        <div className="card-grid">{(data.buy_zone_board || []).map((s) => <StockCard stock={s} key={`${s.ticker}-buy-zone`} />)}</div>
+      </section>
+
+      <section>
+        <h2>Risk-Blocked</h2>
+        <div className="card-grid">{(data.risk_blocked || []).map((s) => <StockCard stock={s} key={`${s.ticker}-risk-blocked`} />)}</div>
+      </section>
+
+      <section>
+        <h2>Needs Audit</h2>
+        <div className="card-grid">{(data.needs_audit || []).map((s) => <StockCard stock={s} key={`${s.ticker}-needs-audit`} />)}</div>
+      </section>
+
+      <section>
+        <h2>Failed</h2>
+        <div className="card-grid">{(data.failed || []).map((s) => <StockCard stock={s} key={`${s.ticker}-failed`} />)}</div>
+      </section>
+
+      <section>
+        <h2>Warnings</h2>
+        <div className="card-grid">{(data.warnings || []).map((s) => <StockCard stock={s} key={`${s.ticker}-warning`} />)}</div>
       </section>
     </main>
   );

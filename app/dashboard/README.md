@@ -8,7 +8,29 @@ Static React + Vite dashboard scaffold for the future Model Factory web app.
 - No login.
 - No external API calls.
 - No portfolio or account connectivity.
-- Uses local sample data only (`src/sampleDashboardData.js`).
+
+## Dashboard Data Source
+
+The dashboard now reads data from generated JSON output:
+
+- Primary path (GitHub Pages): `/model-factory-agent-hub/dashboard_data.json`
+- Local fallback path: `/dashboard_data.json`
+- Static fallback data in code: `src/sampleDashboardData.js` (used only if fetch fails)
+
+Default generated file:
+
+- `public/dashboard_data.json`
+
+Expected JSON shape (aligned to `agents/dashboard_data_builder.py`):
+
+- `summary`
+- `command_center`
+- `buy_zone_board`
+- `risk_blocked`
+- `needs_audit`
+- `failed`
+- `warnings`
+- `latest_agent_runs_placeholder`
 
 ## Data Conventions in This MVP
 
@@ -21,10 +43,11 @@ Static React + Vite dashboard scaffold for the future Model Factory web app.
 
 - Summary cards: total, pass, warning, fail, needs audit, risk blocked
 - Command Center
-- Top Candidates
+- Buy Zone Board
 - Risk-Blocked
-- Needs Review
-- Buy Zone Board (exact `In Buy Zone` matches)
+- Needs Audit
+- Failed
+- Warnings
 
 ## Local Run
 
