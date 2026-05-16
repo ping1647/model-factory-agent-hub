@@ -24,12 +24,13 @@ REQUIRED_FIELDS = {
 }
 
 
-def _latest_row(log_path: Path) -> dict:
-    lines = log_path.read_text(encoding="utf-8").strip().splitlines()
+def _read_latest_jsonl_row(log_path: Path) -> dict:
+    lines = log_path.read_text(encoding="utf-8").splitlines()
+    assert lines
     return json.loads(lines[-1])
 
 
-def test_append_batch_health_log_reads_summary(tmp_path: Path) -> None:
+def test_append_batch_health_log_reads_summary_counts(tmp_path: Path) -> None:
     dashboard_path = tmp_path / "data/dashboard/latest_dashboard_data.json"
     dashboard_path.parent.mkdir(parents=True, exist_ok=True)
     dashboard_path.write_text(
@@ -55,8 +56,10 @@ def test_append_batch_health_log_reads_summary(tmp_path: Path) -> None:
     )
 
     assert log_path.exists()
-    row = _latest_row(log_path)
+    row = _read_latest_jsonl_row(log_path)
     assert REQUIRED_FIELDS.issubset(set(row))
+    assert row["tests_status"] == "passed"
+    assert row["batch_status"] == "passed"
     assert row["dashboard_exists"] is True
     assert row["summary_total_count"] == 6
     assert row["summary_pass_count"] == 4
@@ -65,17 +68,22 @@ def test_append_batch_health_log_reads_summary(tmp_path: Path) -> None:
 
 
 def test_append_batch_health_log_missing_dashboard_is_safe(tmp_path: Path) -> None:
-    missing_dashboard_path = tmp_path / "data/dashboard/latest_dashboard_data.json"
+    dashboard_path = tmp_path / "data/dashboard/latest_dashboard_data.json"
     log_path = tmp_path / "data/logs/batch_health_log.jsonl"
 
     append_batch_health_log(
         tests_status="passed",
         batch_status="passed",
-        dashboard_path=missing_dashboard_path,
+        dashboard_path=dashboard_path,
         log_path=log_path,
     )
 
     assert log_path.exists()
-    row = _latest_row(log_path)
+    row = _read_latest_jsonl_row(log_path)
+    assert REQUIRED_FIELDS.issubset(set(row))
     assert row["dashboard_exists"] is False
+    assert row["summary_total_count"] == 0
+    assert row["summary_pass_count"] == 0
+    assert row["summary_fail_count"] == 0
+    assert row["summary_needs_audit_count"] == 0
     assert "missing" in row["notes"].lower()

@@ -12,17 +12,33 @@ DEFAULT_DASHBOARD_PATH = Path("data/dashboard/latest_dashboard_data.json")
 DEFAULT_LOG_PATH = Path("data/logs/batch_health_log.jsonl")
 
 
+REQUIRED_SUMMARY_KEYS = {
+    "summary_total_count": "total_count",
+    "summary_pass_count": "pass_count",
+    "summary_fail_count": "fail_count",
+    "summary_needs_audit_count": "needs_audit_count",
+}
+
+
 def _safe_int(value: Any) -> int:
-    return value if isinstance(value, int) else 0
+    if isinstance(value, bool):
+        return 0
+    if isinstance(value, int):
+        return value
+    return 0
 
 
-def _read_dashboard_summary(dashboard_path: Path) -> tuple[bool, dict[str, int], str]:
-    summary = {
+def _empty_summary() -> dict[str, int]:
+    return {
         "summary_total_count": 0,
         "summary_pass_count": 0,
         "summary_fail_count": 0,
         "summary_needs_audit_count": 0,
     }
+
+
+def _read_dashboard_summary(dashboard_path: Path) -> tuple[bool, dict[str, int], str]:
+    summary = _empty_summary()
 
     if not dashboard_path.exists():
         return False, summary, "dashboard JSON missing"
@@ -32,14 +48,16 @@ def _read_dashboard_summary(dashboard_path: Path) -> tuple[bool, dict[str, int],
     except (json.JSONDecodeError, OSError) as exc:
         return False, summary, f"dashboard JSON malformed or unreadable: {exc}"
 
-    dashboard_summary = payload.get("summary") if isinstance(payload, dict) else None
+    if not isinstance(payload, dict):
+        return False, summary, "dashboard payload is not an object"
+
+    dashboard_summary = payload.get("summary")
     if not isinstance(dashboard_summary, dict):
         return False, summary, "dashboard summary missing or invalid"
 
-    summary["summary_total_count"] = _safe_int(dashboard_summary.get("total_count"))
-    summary["summary_pass_count"] = _safe_int(dashboard_summary.get("pass_count"))
-    summary["summary_fail_count"] = _safe_int(dashboard_summary.get("fail_count"))
-    summary["summary_needs_audit_count"] = _safe_int(dashboard_summary.get("needs_audit_count"))
+    for out_key, in_key in REQUIRED_SUMMARY_KEYS.items():
+        summary[out_key] = _safe_int(dashboard_summary.get(in_key))
+
     return True, summary, ""
 
 
@@ -63,7 +81,10 @@ def append_batch_health_log(
         "batch_status": batch_status,
         "dashboard_path": str(dashboard_path),
         "dashboard_exists": dashboard_exists,
-        **summary,
+        "summary_total_count": summary["summary_total_count"],
+        "summary_pass_count": summary["summary_pass_count"],
+        "summary_fail_count": summary["summary_fail_count"],
+        "summary_needs_audit_count": summary["summary_needs_audit_count"],
         "notes": note,
     }
 
@@ -74,12 +95,16 @@ def append_batch_health_log(
     return row
 
 
-def main() -> None:
+def _build_arg_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Append one health log record for batch runs")
     parser.add_argument("--tests-status", required=True)
     parser.add_argument("--batch-status", required=True)
-    args = parser.parse_args()
+    return parser
 
+
+def main() -> None:
+    parser = _build_arg_parser()
+    args = parser.parse_args()
     append_batch_health_log(tests_status=args.tests_status, batch_status=args.batch_status)
 
 
