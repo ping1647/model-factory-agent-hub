@@ -1,0 +1,336 @@
+{
+  "blockers": [],
+  "model_id": "M5",
+  "next_action": "Pipeline passed; proceed to human review/approval for any action.",
+  "pipeline_result": {
+    "blockers": [],
+    "dashboard_card": {
+      "benchmark_etf": [
+        "FINX",
+        "ARKF",
+        "QQQ"
+      ],
+      "blocked_by": [
+        "SBC/dilution",
+        "Technology Platform decline",
+        "credit-cycle risk"
+      ],
+      "company": "SoFi Technologies",
+      "decision": "Starter",
+      "freshness": "Needs price/data freshness check",
+      "missing_data": [
+        "FCF after SBC",
+        "dilution trend",
+        "third-party validation of fair-value concerns"
+      ],
+      "model_id": "M5",
+      "next_action": "Small starter only; monitor credit and Tech Platform recovery.",
+      "position_class": "Satellite / High-Beta Starter",
+      "risk_color": "Orange",
+      "risk_score": 7,
+      "status": "Starter",
+      "ticker": "SOFI"
+    },
+    "data_audit": {
+      "benchmark_etf": [
+        "XLF",
+        "KBE"
+      ],
+      "benchmark_status": "Present",
+      "buy_zone_high": 7.5,
+      "buy_zone_low": 6.0,
+      "buy_zone_status": "Above Buy Zone",
+      "current_price": 8.9,
+      "data_quality": "Usable",
+      "decision_blockers": [],
+      "eps_guidance_midpoint": 0.12,
+      "forward_pe": 74.16666666666667,
+      "gap_to_buy_zone_pct": 18.66666666666667,
+      "model_id": "M5",
+      "next_action": "Proceed to risk review",
+      "price_as_of": "2026-05-16",
+      "price_freshness_status": "Fresh",
+      "stale_price": false,
+      "ticker": "SOFI",
+      "valuation_status": "Computed"
+    },
+    "memory_check": {
+      "failures": [],
+      "missing_context_keys": [],
+      "next_action": "Proceed: required memory context is complete, fresh, and supported.",
+      "passed": true,
+      "severity": "Pass",
+      "stale_context_keys": [],
+      "unsupported_model_ids": [],
+      "warnings": []
+    },
+    "model_id": "M5",
+    "next_action": "Pipeline passed; proceed to human review/approval for any action.",
+    "pipeline_status": "Pass",
+    "pqa_report": {
+      "checks": [],
+      "failures": [],
+      "next_action": "Ready for publication",
+      "passed": true,
+      "severity": "Pass",
+      "ticker": "SOFI",
+      "warnings": []
+    },
+    "research_summary": {
+      "balance_sheet": "Missing Data",
+      "bear_case": [],
+      "bull_case": [],
+      "evidence_quality": "Missing Data",
+      "growth_drivers": [],
+      "kill_switches": [],
+      "missing_data": [
+        "sec_10k_or_annual_report",
+        "sec_10q_or_quarterly_report",
+        "latest_earnings_release",
+        "latest_earnings_call_transcript",
+        "investor_presentation",
+        "current_price_and_market_data",
+        "deposits_and_funding_mix",
+        "net_interest_margin_trend",
+        "credit_quality_nco_and_delinquency",
+        "capital_ratio_and_liquidity",
+        "sbc_and_share_dilution",
+        "fair_value_and_accounting_risk"
+      ],
+      "moat": "Missing Data",
+      "model_estimates": [],
+      "model_id": "M5",
+      "next_action": "Collect and verify required sources before audit decision.",
+      "preliminary_decision": "Wait",
+      "profitability_quality": "Missing Data",
+      "source_checklist": [
+        {
+          "required": true,
+          "source_type": "sec_10k_or_annual_report",
+          "tier": "primary",
+          "why_needed": "Anchor long-term fundamentals, risks, and accounting disclosures."
+        },
+        {
+          "required": true,
+          "source_type": "sec_10q_or_quarterly_report",
+          "tier": "primary",
+          "why_needed": "Capture latest quarter operating trends and balance-sheet updates."
+        },
+        {
+          "required": true,
+          "source_type": "latest_earnings_release",
+          "tier": "primary",
+          "why_needed": "Confirm reported results, guidance, and management commentary."
+        },
+        {
+          "required": true,
+          "source_type": "latest_earnings_call_transcript",
+          "tier": "primary",
+          "why_needed": "Validate qualitative signals, Q&A details, and management tone."
+        },
+        {
+          "required": true,
+          "source_type": "investor_presentation",
+          "tier": "secondary",
+          "why_needed": "Cross-check segment KPIs and strategic priorities highlighted to investors."
+        },
+        {
+          "required": true,
+          "source_type": "current_price_and_market_data",
+          "tier": "primary",
+          "why_needed": "Support valuation discipline, benchmark-relative checks, and freshness control."
+        },
+        {
+          "required": true,
+          "source_type": "deposits_and_funding_mix",
+          "tier": "primary",
+          "why_needed": "Validate deposit growth, mix shifts, and funding durability."
+        },
+        {
+          "required": true,
+          "source_type": "net_interest_margin_trend",
+          "tier": "primary",
+          "why_needed": "Measure unit economics sensitivity to rates and funding costs."
+        },
+        {
+          "required": true,
+          "source_type": "credit_quality_nco_and_delinquency",
+          "tier": "primary",
+          "why_needed": "Assess underwriting quality and emerging credit stress."
+        },
+        {
+          "required": true,
+          "source_type": "capital_ratio_and_liquidity",
+          "tier": "primary",
+          "why_needed": "Confirm balance-sheet resilience and regulatory cushion."
+        },
+        {
+          "required": true,
+          "source_type": "sbc_and_share_dilution",
+          "tier": "secondary",
+          "why_needed": "Quantify per-share dilution and compensation drag."
+        },
+        {
+          "required": true,
+          "source_type": "fair_value_and_accounting_risk",
+          "tier": "secondary",
+          "why_needed": "Surface earnings volatility and estimate uncertainty from fair-value marks."
+        }
+      ],
+      "ticker": "SOFI",
+      "valuation": "Missing Data",
+      "verified_facts": [],
+      "weak_signals": []
+    },
+    "risk_adjusted_audit": {
+      "balance_sheet": "Strong capital ratio and deposit funding, but credit-cycle risk remains.",
+      "bear_case": [
+        "Tech Platform -27%",
+        "fair-value accounting debate",
+        "credit-cycle risk",
+        "SBC",
+        "higher rates"
+      ],
+      "benchmark_etf": [
+        "FINX",
+        "ARKF",
+        "QQQ"
+      ],
+      "blocked_by": [
+        "SBC/dilution",
+        "Technology Platform decline",
+        "credit-cycle risk"
+      ],
+      "bull_case": [
+        "revenue growth",
+        "deposits",
+        "member growth",
+        "cross-sell",
+        "GAAP profitability"
+      ],
+      "company": "SoFi Technologies",
+      "decision": "Starter",
+      "evidence_quality": "Medium-High",
+      "growth_drivers": [
+        "Lending",
+        "Financial Services",
+        "member growth",
+        "cross-sell",
+        "deposits"
+      ],
+      "human_approval_required": true,
+      "kill_switches": [
+        "financial restatement",
+        "NCO spikes",
+        "Tech Platform fails to recover",
+        "deposit growth stalls"
+      ],
+      "missing_data": [
+        "FCF after SBC",
+        "dilution trend",
+        "third-party validation of fair-value concerns"
+      ],
+      "moat": "Bank charter, deposit funding, member ecosystem, cross-sell.",
+      "model_estimates": [],
+      "model_id": "M5",
+      "next_action": "Small starter only; monitor credit and Tech Platform recovery.",
+      "position_class": "Satellite / High-Beta Starter",
+      "profitability_quality": "GAAP profitable, but SBC and fair-value accounting require monitoring.",
+      "risk_score": 7,
+      "ticker": "SOFI",
+      "valuation": "Starter only if credit holds and Tech Platform returns to growth.",
+      "verified_facts": [
+        "Q1 2026 GAAP revenue $1.1B, +43% YoY",
+        "Adjusted net revenue $1.09B, +41% YoY",
+        "Deposits $40.2B",
+        "Personal loan NCO 3.03%"
+      ],
+      "weak_signals": [
+        "Reddit bear case on fair-value accounting requires verification"
+      ]
+    },
+    "source_requirements": {
+      "model_id": "M5",
+      "source_requirements": [
+        {
+          "required": true,
+          "source_type": "sec_10k_or_annual_report",
+          "tier": "primary",
+          "why_needed": "Anchor long-term fundamentals, risks, and accounting disclosures."
+        },
+        {
+          "required": true,
+          "source_type": "sec_10q_or_quarterly_report",
+          "tier": "primary",
+          "why_needed": "Capture latest quarter operating trends and balance-sheet updates."
+        },
+        {
+          "required": true,
+          "source_type": "latest_earnings_release",
+          "tier": "primary",
+          "why_needed": "Confirm reported results, guidance, and management commentary."
+        },
+        {
+          "required": true,
+          "source_type": "latest_earnings_call_transcript",
+          "tier": "primary",
+          "why_needed": "Validate qualitative signals, Q&A details, and management tone."
+        },
+        {
+          "required": true,
+          "source_type": "investor_presentation",
+          "tier": "secondary",
+          "why_needed": "Cross-check segment KPIs and strategic priorities highlighted to investors."
+        },
+        {
+          "required": true,
+          "source_type": "current_price_and_market_data",
+          "tier": "primary",
+          "why_needed": "Support valuation discipline, benchmark-relative checks, and freshness control."
+        },
+        {
+          "required": true,
+          "source_type": "deposits_and_funding_mix",
+          "tier": "primary",
+          "why_needed": "Validate deposit growth, mix shifts, and funding durability."
+        },
+        {
+          "required": true,
+          "source_type": "net_interest_margin_trend",
+          "tier": "primary",
+          "why_needed": "Measure unit economics sensitivity to rates and funding costs."
+        },
+        {
+          "required": true,
+          "source_type": "credit_quality_nco_and_delinquency",
+          "tier": "primary",
+          "why_needed": "Assess underwriting quality and emerging credit stress."
+        },
+        {
+          "required": true,
+          "source_type": "capital_ratio_and_liquidity",
+          "tier": "primary",
+          "why_needed": "Confirm balance-sheet resilience and regulatory cushion."
+        },
+        {
+          "required": true,
+          "source_type": "sbc_and_share_dilution",
+          "tier": "secondary",
+          "why_needed": "Quantify per-share dilution and compensation drag."
+        },
+        {
+          "required": true,
+          "source_type": "fair_value_and_accounting_risk",
+          "tier": "secondary",
+          "why_needed": "Surface earnings volatility and estimate uncertainty from fair-value marks."
+        }
+      ],
+      "ticker": "SOFI"
+    },
+    "ticker": "SOFI"
+  },
+  "pipeline_status": "Pass",
+  "run_date": "2026-05-19",
+  "run_id": "manual-20260519-080934",
+  "ticker": "SOFI"
+}
