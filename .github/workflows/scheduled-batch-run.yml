@@ -1,0 +1,81 @@
+name: Scheduled Batch Run
+
+on:
+  schedule:
+    - cron: "30 0 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: scheduled-batch-run
+  cancel-in-progress: false
+
+jobs:
+  scheduled-batch:
+    runs-on: ubuntu-latest
+    env:
+      PYTHONPATH: .
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install pytest
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest
+
+      - name: Run tests
+        id: tests
+        continue-on-error: true
+        run: pytest tests -q
+
+      - name: Run manual batch pipeline
+        id: batch
+        continue-on-error: true
+        run: python scripts/run_manual_batch.py
+
+      - name: Append batch health log
+        if: ${{ always() }}
+        run: |
+          python scripts/append_batch_health_log.py \
+            --tests-status "${{ steps.tests.outcome }}" \
+            --batch-status "${{ steps.batch.outcome }}"
+
+      - name: Commit generated artifacts if changed
+        if: ${{ always() }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add \
+            data/runs \
+            data/dashboard/latest_dashboard_data.json \
+            app/dashboard/public/dashboard_data.json \
+            data/logs/batch_health_log.jsonl
+
+          if git diff --cached --quiet; then
+            echo "No generated artifact changes to commit."
+          else
+            git commit -m "chore: scheduled batch artifacts"
+            git push
+          fi
+
+      - name: Final failure gate
+        if: ${{ always() }}
+        run: |
+          if [ "${{ steps.tests.outcome }}" = "failure" ] || [ "${{ steps.batch.outcome }}" = "failure" ]; then
+            echo "Tests or batch step failed; marking workflow as failed after logging artifacts."
+            exit 1
+          fi
+
+      # TODO: Follow-up PR: harden GitHub Pages refresh/deploy because GITHUB_TOKEN commits do not trigger Pages builds.
