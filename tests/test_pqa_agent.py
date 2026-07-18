@@ -1,4 +1,5 @@
 import json
+from datetime import date
 from pathlib import Path
 import sys
 
@@ -7,6 +8,9 @@ sys.path.append(str(ROOT))
 
 from agents.pqa_agent import run_pqa_checks
 from agents.data_auditor import build_data_audit
+
+
+TEST_AS_OF = date(2026, 5, 16)
 
 
 def load_example(name):
@@ -24,6 +28,7 @@ def test_ttek_starter_usable_data_not_fail():
         buy_zone_low=48.0,
         buy_zone_high=55.0,
         eps_guidance_midpoint=3.0,
+        as_of_date=TEST_AS_OF,
     )
     dashboard = {"status": "Starter", "freshness": "Fresh"}
 
