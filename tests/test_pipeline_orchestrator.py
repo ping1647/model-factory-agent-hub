@@ -1,9 +1,13 @@
 from __future__ import annotations
 
 import json
+from datetime import date
 from pathlib import Path
 
 from agents.pipeline_orchestrator import run_stock_audit_pipeline
+
+
+TEST_AS_OF = date(2026, 5, 16)
 
 
 def load_example(name: str) -> dict:
@@ -42,6 +46,7 @@ def test_ttek_pipeline_with_base_audit_not_fail():
         model_factor_matrix={"M13": {}},
         market_inputs=base_market_inputs(),
         base_audit=load_example("TTEK.audit.json"),
+        as_of_date=TEST_AS_OF,
     )
 
     assert out["pipeline_status"] in {"Pass", "Warning"}
@@ -57,6 +62,7 @@ def test_erii_guidance_withdrawn_not_top_candidate_buy():
         model_factor_matrix={"M13": {}},
         market_inputs={**base_market_inputs(), "guidance_withdrawn": True},
         base_audit=erii,
+        as_of_date=TEST_AS_OF,
     )
 
     assert out["risk_adjusted_audit"]["decision"] in {"Wait", "Risk-Blocked", "Avoid", "Starter", "Buy"}
@@ -72,6 +78,7 @@ def test_missing_current_price_fails():
         model_factor_matrix={"M13": {}},
         market_inputs={**base_market_inputs(), "current_price": None},
         base_audit=load_example("TTEK.audit.json"),
+        as_of_date=TEST_AS_OF,
     )
 
     assert out["pipeline_status"] == "Fail"
@@ -88,6 +95,7 @@ def test_missing_memory_context_fails():
         model_factor_matrix={"M13": {}},
         market_inputs=base_market_inputs(),
         base_audit=load_example("TTEK.audit.json"),
+        as_of_date=TEST_AS_OF,
     )
 
     assert out["pipeline_status"] == "Fail"
@@ -101,6 +109,7 @@ def test_no_base_audit_needs_audit():
         model_factor_matrix={"M13": {}},
         market_inputs=base_market_inputs(),
         base_audit=None,
+        as_of_date=TEST_AS_OF,
     )
 
     assert out["pipeline_status"] == "Needs Audit"
