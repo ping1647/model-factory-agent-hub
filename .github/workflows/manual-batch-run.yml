@@ -2,6 +2,17 @@ name: Manual Batch Run
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "data/market_inputs/**"
+      - "data/watchlists/**"
+      - "data/examples/**"
+      - "data/model_factor_matrix_min.json"
+      - "agents/**"
+      - "scripts/run_manual_batch.py"
+      - ".github/workflows/manual-batch-run.yml"
 
 permissions:
   contents: write
