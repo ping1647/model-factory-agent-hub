@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0",
+  "registry_as_of": "2026-07-18",
+  "governance": {
+    "decision_support_only": true,
+    "automatic_trade_execution": false,
+    "l4_label": "Risk-restricted decision-support only; not an automatic buy signal",
+    "weekly_refresh": "Refresh data, freshness, contradictions, risk flags, and dashboard state without changing model weights",
+    "monthly_calibration": "Re-estimate valuation bands and thresholds only after reproducible checks",
+    "quarterly_retraining": "Change factor weights or model structure only after benchmark, drawdown, and false-signal review",
+    "default_when_data_missing": "Block or Needs Audit",
+    "promotion_to_l5_requires": [
+      "verified_1m_3m_6m_12m_alpha",
+      "maximum_drawdown_and_recovery_time",
+      "audited_fixed_rule_win_rate",
+      "false_positive_and_false_negative_review",
+      "valuation_percentile_history",
+      "position_sizing_and_etf_fallback_stress_test"
+    ]
+  },
+  "models": [
+    {"model_id":"M1","name":"Quality Compounder","level":"L4","status":"paused","progress_pct":null,"test_case_count":null,"benchmark":["QUAL","SCHD","SPY"],"reason":"Source Collector support and authoritative run metrics are incomplete."},
+    {"model_id":"M2","name":"Survivability","level":null,"status":"frozen_incomplete","progress_pct":null,"test_case_count":null,"benchmark":[],"reason":"Model card, rules, ticker map, and run evidence are incomplete."},
+    {"model_id":"M3","name":"Macro Overlay","level":"L4","status":"scope_defined_not_operational","progress_pct":null,"test_case_count":null,"benchmark":["SPY","QQQ","SGOV"],"reason":"No current macro data feed or reproducible regime run in the authoritative pipeline."},
+    {"model_id":"M4","name":"Nuclear","level":"L4","status":"scope_defined_not_operational","progress_pct":null,"test_case_count":null,"benchmark":["URA","URNM","XLU"],"reason":"No active ticker batch and no verified test history in the run store."},
+    {"model_id":"M5","name":"Fintech","level":"L4","status":"active_partial","progress_pct":null,"test_case_count":null,"benchmark":["FINX","ARKF","XLF"],"reason":"SOFI has a base audit; broader model metrics and benchmark alpha remain unverified."},
+    {"model_id":"M6","name":"Healthcare","level":"L4","status":"active_needs_audit","progress_pct":null,"test_case_count":null,"benchmark":["XLV","IHI","IBB"],"reason":"HIMS is active but lacks a complete base audit and compatible valuation schema."},
+    {"model_id":"M7","name":"Semiconductor and AI Compute","level":"L4","status":"active_needs_audit","progress_pct":null,"test_case_count":null,"benchmark":["SMH","SOXX","QQQ"],"reason":"NVDA is active but lacks a complete base audit and verified benchmark alpha."},
+    {"model_id":"M8","name":"Cybersecurity","level":"L4","status":"scope_defined_not_operational","progress_pct":null,"test_case_count":null,"benchmark":["HACK","CIBR"],"reason":"No active ticker batch or authoritative run metrics."},
+    {"model_id":"M9","name":"Quantum","level":"L4","status":"paused","progress_pct":null,"test_case_count":null,"benchmark":["QTUM","ARKK"],"reason":"IONQ is paused until Source Collector support is implemented."},
+    {"model_id":"M10","name":"Space","level":"L4","status":"paused","progress_pct":null,"test_case_count":null,"benchmark":["ARKX","UFO","ITA"],"reason":"RKLB is paused until Source Collector support is implemented."},
+    {"model_id":"M11","name":"Payment Rails","level":"L4","status":"paused","progress_pct":null,"test_case_count":null,"benchmark":["IPAY","XLF"],"reason":"Visa is paused until Source Collector support is implemented."},
+    {"model_id":"M12","name":"Banks","level":"L4","status":"paused","progress_pct":null,"test_case_count":null,"benchmark":["KBE","XLF"],"reason":"JPM is paused until Source Collector support is implemented."},
+    {"model_id":"M13","name":"Water and PFAS","level":"L4","status":"active_partial","progress_pct":null,"test_case_count":null,"benchmark":["PHO","PIO","CGW"],"reason":"TTEK and ERII have base audits; current valuation bands and alpha remain unverified."},
+    {"model_id":"M14","name":"AI Energy and Power Bottleneck","level":"L4","status":"active_needs_audit","progress_pct":null,"test_case_count":null,"benchmark":["GRID","XLU","VPU"],"reason":"VST is active but lacks a complete base audit and compatible EBITDA/FCF valuation schema."}
+  ],
+  "legacy_packs": [
+    {"model_id":"LEGACY_M2","name":"AI Data Center / Compute Infrastructure Pack","level":"Legacy L4","status":"separate_not_operational","progress_pct":null,"test_case_count":null,"benchmark":["SMH","GRID"],"reason":"Must remain separate from core M2 and requires standalone reproducible outputs."},
+    {"model_id":"LEGACY_M3","name":"Digital Commerce / Marketplace / AdTech Pack","level":"Legacy L4","status":"separate_not_operational","progress_pct":null,"test_case_count":null,"benchmark":["XLC","FDN","IBUY"],"reason":"Must remain separate from core M3 and requires standalone reproducible outputs."}
+  ],
+  "excluded_models": [
+    {"model_id":"M15","status":"excluded_undefined","allowed_for_training":false},
+    {"model_id":"M16","status":"excluded_undefined","allowed_for_training":false}
+  ]
+}
