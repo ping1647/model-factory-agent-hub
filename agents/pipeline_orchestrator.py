@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from copy import deepcopy
+from datetime import date
 from typing import Any
 
 from agents.dashboard_agent import to_dashboard_card
@@ -27,6 +28,7 @@ def run_stock_audit_pipeline(
     model_factor_matrix: dict,
     market_inputs: dict,
     base_audit: dict | None = None,
+    as_of_date: date | None = None,
 ) -> dict:
     """Run deterministic local pipeline without external data or LLM APIs."""
     memory_check = run_memory_check(run_context, model_factor_matrix)
@@ -48,6 +50,7 @@ def run_stock_audit_pipeline(
         buy_zone_high=market_inputs.get("buy_zone_high"),
         eps_guidance_midpoint=market_inputs.get("eps_guidance_midpoint"),
         guidance_withdrawn=bool(market_inputs.get("guidance_withdrawn", False)),
+        as_of_date=as_of_date,
     )
 
     risk_adjusted_audit: dict[str, Any] | None = None

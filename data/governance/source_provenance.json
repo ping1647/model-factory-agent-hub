@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "as_of": "2026-07-18",
+  "policy": {
+    "verified_fact_requires_source": true,
+    "allowed_primary_sources": ["SEC filing", "company investor relations", "exchange or licensed market-data provider"],
+    "secondary_sources_may_not_create_buy_signal": true,
+    "missing_source_action": "Block or Needs Audit"
+  },
+  "entries": [
+    {"ticker":"TTEK","field_group":"price_and_guidance","source_status":"needs_primary_source_attachment","source_type":null,"source_reference":null,"published_at":null,"fetched_at":"2026-07-18","verification_status":"unverified"},
+    {"ticker":"ERII","field_group":"price_and_guidance","source_status":"needs_primary_source_attachment","source_type":null,"source_reference":null,"published_at":null,"fetched_at":"2026-07-18","verification_status":"unverified"},
+    {"ticker":"SOFI","field_group":"price_and_guidance","source_status":"needs_primary_source_attachment","source_type":null,"source_reference":null,"published_at":null,"fetched_at":"2026-07-18","verification_status":"unverified"},
+    {"ticker":"HIMS","field_group":"price_and_guidance","source_status":"needs_primary_source_attachment","source_type":null,"source_reference":null,"published_at":null,"fetched_at":"2026-07-18","verification_status":"unverified"},
+    {"ticker":"NVDA","field_group":"price_and_guidance","source_status":"needs_primary_source_attachment","source_type":null,"source_reference":null,"published_at":null,"fetched_at":"2026-07-18","verification_status":"unverified"},
+    {"ticker":"VST","field_group":"price_and_guidance","source_status":"needs_primary_source_attachment","source_type":null,"source_reference":null,"published_at":null,"fetched_at":"2026-07-18","verification_status":"unverified"}
+  ]
+}

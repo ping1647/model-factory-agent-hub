@@ -1,0 +1,10 @@
+{
+  "schema_version": "1.0",
+  "as_of": "2026-07-18",
+  "policy": {
+    "unresolved_material_contradiction_blocks_action": true,
+    "resolution_requires_primary_source": true
+  },
+  "open_items": [],
+  "resolved_items": []
+}

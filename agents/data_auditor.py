@@ -26,8 +26,10 @@ def build_data_audit(
     eps_guidance_midpoint: float | None = None,
     guidance_withdrawn: bool = False,
     max_price_age_days: int = 7,
+    as_of_date: date | None = None,
 ) -> dict[str, Any]:
     blockers: list[str] = []
+    audit_as_of = as_of_date or date.today()
 
     parsed_price_date = _parse_iso_date(price_as_of)
     stale_price = False
@@ -40,7 +42,7 @@ def build_data_audit(
     elif parsed_price_date is None:
         blockers.append("invalid_price_timestamp")
     else:
-        age_days = (date.today() - parsed_price_date).days
+        age_days = (audit_as_of - parsed_price_date).days
         if age_days > max_price_age_days:
             stale_price = True
             blockers.append("stale_price")
@@ -92,6 +94,7 @@ def build_data_audit(
     return {
         "ticker": ticker,
         "model_id": model_id,
+        "audit_as_of": audit_as_of.isoformat(),
         "current_price": current_price,
         "price_as_of": price_as_of,
         "price_freshness_status": price_freshness_status,
