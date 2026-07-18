@@ -1,24 +1,40 @@
-name: Manual Batch Run
+name: Weekly Model Governance
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
+  schedule:
+    - cron: "0 8 * * 0"
+  pull_request:
     paths:
+      - "data/registry/**"
+      - "data/governance/**"
       - "data/market_inputs/**"
       - "data/watchlists/**"
       - "data/examples/**"
       - "data/model_factor_matrix_min.json"
       - "agents/**"
-      - "scripts/run_manual_batch.py"
+      - "scripts/**"
+      - "tests/**"
+      - ".github/workflows/manual-batch-run.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "data/registry/**"
+      - "data/governance/**"
+      - "data/market_inputs/**"
+      - "data/watchlists/**"
+      - "data/examples/**"
+      - "data/model_factor_matrix_min.json"
+      - "agents/**"
+      - "scripts/**"
       - ".github/workflows/manual-batch-run.yml"
 
 permissions:
   contents: write
 
 jobs:
-  manual-batch-run:
+  weekly-model-governance:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -37,19 +53,25 @@ jobs:
       - name: Run test suite
         run: pytest tests -q
 
-      - name: Run manual deterministic batch
+      - name: Generate weekly governance health report
+        run: python scripts/generate_weekly_health_report.py
+        env:
+          PYTHONPATH: .
+
+      - name: Run deterministic watchlist batch
         run: python scripts/run_manual_batch.py
         env:
           PYTHONPATH: .
 
       - name: Commit generated artifacts
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/runs data/dashboard/latest_dashboard_data.json app/dashboard/public/dashboard_data.json
+          git add data/runs data/reports data/dashboard/latest_dashboard_data.json app/dashboard/public/dashboard_data.json
           if git diff --cached --quiet; then
             echo "No generated changes to commit"
             exit 0
           fi
-          git commit -m "chore: persist manual batch outputs"
+          git commit -m "chore: persist weekly model governance outputs"
           git push origin HEAD:main
