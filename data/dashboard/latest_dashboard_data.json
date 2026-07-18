@@ -1,18 +1,5 @@
 {
-  "buy_zone_board": [
-    {
-      "blockers": [],
-      "buy_zone_status": "In Buy Zone",
-      "decision": "Starter",
-      "model_id": "M13",
-      "next_action": "Pipeline passed; proceed to human review/approval for any action.",
-      "pipeline_status": "Pass",
-      "position_class": "Core/Satellite Starter",
-      "risk_score": 4,
-      "ticker": "TTEK",
-      "valuation_status": "Computed"
-    }
-  ],
+  "buy_zone_board": [],
   "command_center": {
     "blocked_names": [],
     "needs_review": [
@@ -26,7 +13,7 @@
         "position_class": "",
         "risk_score": null,
         "ticker": "HIMS",
-        "valuation_status": "Computed"
+        "valuation_status": "Insufficient Data"
       },
       {
         "blockers": [],
@@ -38,7 +25,7 @@
         "position_class": "",
         "risk_score": null,
         "ticker": "NVDA",
-        "valuation_status": "Computed"
+        "valuation_status": "Insufficient Data"
       },
       {
         "blockers": [],
@@ -50,13 +37,13 @@
         "position_class": "",
         "risk_score": null,
         "ticker": "VST",
-        "valuation_status": "Computed"
+        "valuation_status": "Insufficient Data"
       },
       {
         "blockers": [
           "guidance_withdrawn"
         ],
-        "buy_zone_status": "Above Buy Zone",
+        "buy_zone_status": "Below Buy Zone",
         "decision": "Wait",
         "model_id": "M13",
         "next_action": "Resolve blockers before proceeding with any decision output.",
@@ -67,27 +54,14 @@
         "valuation_status": "Unreliable - Guidance Withdrawn"
       }
     ],
-    "top_candidates": [
-      {
-        "blockers": [],
-        "buy_zone_status": "In Buy Zone",
-        "decision": "Starter",
-        "model_id": "M13",
-        "next_action": "Pipeline passed; proceed to human review/approval for any action.",
-        "pipeline_status": "Pass",
-        "position_class": "Core/Satellite Starter",
-        "risk_score": 4,
-        "ticker": "TTEK",
-        "valuation_status": "Computed"
-      }
-    ]
+    "top_candidates": []
   },
   "failed": [
     {
       "blockers": [
         "guidance_withdrawn"
       ],
-      "buy_zone_status": "Above Buy Zone",
+      "buy_zone_status": "Below Buy Zone",
       "decision": "Wait",
       "model_id": "M13",
       "next_action": "Resolve blockers before proceeding with any decision output.",
@@ -110,7 +84,7 @@
       "position_class": "",
       "risk_score": null,
       "ticker": "HIMS",
-      "valuation_status": "Computed"
+      "valuation_status": "Insufficient Data"
     },
     {
       "blockers": [],
@@ -122,7 +96,7 @@
       "position_class": "",
       "risk_score": null,
       "ticker": "NVDA",
-      "valuation_status": "Computed"
+      "valuation_status": "Insufficient Data"
     },
     {
       "blockers": [],
@@ -134,7 +108,7 @@
       "position_class": "",
       "risk_score": null,
       "ticker": "VST",
-      "valuation_status": "Computed"
+      "valuation_status": "Insufficient Data"
     }
   ],
   "risk_blocked": [],

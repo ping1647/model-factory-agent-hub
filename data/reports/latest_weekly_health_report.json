@@ -1,0 +1,341 @@
+{
+  "as_of": "2026-07-18",
+  "excluded_models": [
+    {
+      "allowed_for_training": false,
+      "model_id": "M15",
+      "status": "excluded_undefined"
+    },
+    {
+      "allowed_for_training": false,
+      "model_id": "M16",
+      "status": "excluded_undefined"
+    }
+  ],
+  "generated_at": "2026-07-18T12:27:40.575588+00:00",
+  "governance": {
+    "automatic_buy_signals_allowed": false,
+    "decision_support_only": true,
+    "default_missing_data_action": "Block or Needs Audit",
+    "model_weights_changed": false
+  },
+  "legacy_packs": [
+    {
+      "benchmark": [
+        "SMH",
+        "GRID"
+      ],
+      "level": "Legacy L4",
+      "model_id": "LEGACY_M2",
+      "name": "AI Data Center / Compute Infrastructure Pack",
+      "progress_pct": null,
+      "reason": "Must remain separate from core M2 and requires standalone reproducible outputs.",
+      "status": "separate_not_operational",
+      "test_case_count": null
+    },
+    {
+      "benchmark": [
+        "XLC",
+        "FDN",
+        "IBUY"
+      ],
+      "level": "Legacy L4",
+      "model_id": "LEGACY_M3",
+      "name": "Digital Commerce / Marketplace / AdTech Pack",
+      "progress_pct": null,
+      "reason": "Must remain separate from core M3 and requires standalone reproducible outputs.",
+      "status": "separate_not_operational",
+      "test_case_count": null
+    }
+  ],
+  "model_health": [
+    {
+      "active_tickers": [],
+      "decision_support_only": true,
+      "level": "L4",
+      "model_id": "M1",
+      "name": "Quality Compounder",
+      "progress_pct": null,
+      "registry_status": "paused",
+      "test_case_count": null,
+      "weekly_status": "paused"
+    },
+    {
+      "active_tickers": [],
+      "decision_support_only": true,
+      "level": null,
+      "model_id": "M2",
+      "name": "Survivability",
+      "progress_pct": null,
+      "registry_status": "frozen_incomplete",
+      "test_case_count": null,
+      "weekly_status": "frozen_incomplete"
+    },
+    {
+      "active_tickers": [],
+      "decision_support_only": true,
+      "level": "L4",
+      "model_id": "M3",
+      "name": "Macro Overlay",
+      "progress_pct": null,
+      "registry_status": "scope_defined_not_operational",
+      "test_case_count": null,
+      "weekly_status": "scope_defined_not_operational"
+    },
+    {
+      "active_tickers": [],
+      "decision_support_only": true,
+      "level": "L4",
+      "model_id": "M4",
+      "name": "Nuclear",
+      "progress_pct": null,
+      "registry_status": "scope_defined_not_operational",
+      "test_case_count": null,
+      "weekly_status": "scope_defined_not_operational"
+    },
+    {
+      "active_tickers": [
+        "SOFI"
+      ],
+      "decision_support_only": true,
+      "level": "L4",
+      "model_id": "M5",
+      "name": "Fintech",
+      "progress_pct": null,
+      "registry_status": "active_partial",
+      "test_case_count": null,
+      "weekly_status": "Blocked"
+    },
+    {
+      "active_tickers": [
+        "HIMS"
+      ],
+      "decision_support_only": true,
+      "level": "L4",
+      "model_id": "M6",
+      "name": "Healthcare",
+      "progress_pct": null,
+      "registry_status": "active_needs_audit",
+      "test_case_count": null,
+      "weekly_status": "Blocked"
+    },
+    {
+      "active_tickers": [
+        "NVDA"
+      ],
+      "decision_support_only": true,
+      "level": "L4",
+      "model_id": "M7",
+      "name": "Semiconductor and AI Compute",
+      "progress_pct": null,
+      "registry_status": "active_needs_audit",
+      "test_case_count": null,
+      "weekly_status": "Blocked"
+    },
+    {
+      "active_tickers": [],
+      "decision_support_only": true,
+      "level": "L4",
+      "model_id": "M8",
+      "name": "Cybersecurity",
+      "progress_pct": null,
+      "registry_status": "scope_defined_not_operational",
+      "test_case_count": null,
+      "weekly_status": "scope_defined_not_operational"
+    },
+    {
+      "active_tickers": [],
+      "decision_support_only": true,
+      "level": "L4",
+      "model_id": "M9",
+      "name": "Quantum",
+      "progress_pct": null,
+      "registry_status": "paused",
+      "test_case_count": null,
+      "weekly_status": "paused"
+    },
+    {
+      "active_tickers": [],
+      "decision_support_only": true,
+      "level": "L4",
+      "model_id": "M10",
+      "name": "Space",
+      "progress_pct": null,
+      "registry_status": "paused",
+      "test_case_count": null,
+      "weekly_status": "paused"
+    },
+    {
+      "active_tickers": [],
+      "decision_support_only": true,
+      "level": "L4",
+      "model_id": "M11",
+      "name": "Payment Rails",
+      "progress_pct": null,
+      "registry_status": "paused",
+      "test_case_count": null,
+      "weekly_status": "paused"
+    },
+    {
+      "active_tickers": [],
+      "decision_support_only": true,
+      "level": "L4",
+      "model_id": "M12",
+      "name": "Banks",
+      "progress_pct": null,
+      "registry_status": "paused",
+      "test_case_count": null,
+      "weekly_status": "paused"
+    },
+    {
+      "active_tickers": [
+        "TTEK",
+        "ERII"
+      ],
+      "decision_support_only": true,
+      "level": "L4",
+      "model_id": "M13",
+      "name": "Water and PFAS",
+      "progress_pct": null,
+      "registry_status": "active_partial",
+      "test_case_count": null,
+      "weekly_status": "Blocked"
+    },
+    {
+      "active_tickers": [
+        "VST"
+      ],
+      "decision_support_only": true,
+      "level": "L4",
+      "model_id": "M14",
+      "name": "AI Energy and Power Bottleneck",
+      "progress_pct": null,
+      "registry_status": "active_needs_audit",
+      "test_case_count": null,
+      "weekly_status": "Blocked"
+    }
+  ],
+  "schema_version": "1.0",
+  "summary": {
+    "active_ticker_count": 6,
+    "blocked_count": 6,
+    "healthy_count": 0,
+    "needs_audit_count": 0
+  },
+  "ticker_health": [
+    {
+      "automatic_buy_signal": false,
+      "base_audit_exists": true,
+      "blockers": [
+        "stale_buy_zone_over_30_days",
+        "unverified_source_provenance"
+      ],
+      "buy_zone_age_days": 63,
+      "buy_zone_as_of": "2026-05-16",
+      "model_id": "M13",
+      "price_age_days": 1,
+      "price_as_of": "2026-07-17",
+      "review_items": [],
+      "source_verification_status": "unverified",
+      "status": "Blocked",
+      "ticker": "TTEK"
+    },
+    {
+      "automatic_buy_signal": false,
+      "base_audit_exists": true,
+      "blockers": [
+        "guidance_withdrawn",
+        "stale_buy_zone_over_30_days",
+        "unverified_source_provenance"
+      ],
+      "buy_zone_age_days": 63,
+      "buy_zone_as_of": "2026-05-16",
+      "model_id": "M13",
+      "price_age_days": 1,
+      "price_as_of": "2026-07-17",
+      "review_items": [
+        "eps_valuation_basis_unavailable"
+      ],
+      "source_verification_status": "unverified",
+      "status": "Blocked",
+      "ticker": "ERII"
+    },
+    {
+      "automatic_buy_signal": false,
+      "base_audit_exists": true,
+      "blockers": [
+        "stale_buy_zone_over_30_days",
+        "unverified_source_provenance"
+      ],
+      "buy_zone_age_days": 63,
+      "buy_zone_as_of": "2026-05-16",
+      "model_id": "M5",
+      "price_age_days": 1,
+      "price_as_of": "2026-07-17",
+      "review_items": [],
+      "source_verification_status": "unverified",
+      "status": "Blocked",
+      "ticker": "SOFI"
+    },
+    {
+      "automatic_buy_signal": false,
+      "base_audit_exists": false,
+      "blockers": [
+        "stale_buy_zone_over_30_days",
+        "unverified_source_provenance"
+      ],
+      "buy_zone_age_days": 63,
+      "buy_zone_as_of": "2026-05-16",
+      "model_id": "M6",
+      "price_age_days": 1,
+      "price_as_of": "2026-07-17",
+      "review_items": [
+        "eps_valuation_basis_unavailable",
+        "missing_base_audit"
+      ],
+      "source_verification_status": "unverified",
+      "status": "Blocked",
+      "ticker": "HIMS"
+    },
+    {
+      "automatic_buy_signal": false,
+      "base_audit_exists": false,
+      "blockers": [
+        "stale_buy_zone_over_30_days",
+        "unverified_source_provenance"
+      ],
+      "buy_zone_age_days": 63,
+      "buy_zone_as_of": "2026-05-16",
+      "model_id": "M7",
+      "price_age_days": 1,
+      "price_as_of": "2026-07-17",
+      "review_items": [
+        "eps_valuation_basis_unavailable",
+        "missing_base_audit"
+      ],
+      "source_verification_status": "unverified",
+      "status": "Blocked",
+      "ticker": "NVDA"
+    },
+    {
+      "automatic_buy_signal": false,
+      "base_audit_exists": false,
+      "blockers": [
+        "stale_buy_zone_over_30_days",
+        "unverified_source_provenance"
+      ],
+      "buy_zone_age_days": 63,
+      "buy_zone_as_of": "2026-05-16",
+      "model_id": "M14",
+      "price_age_days": 1,
+      "price_as_of": "2026-07-17",
+      "review_items": [
+        "eps_valuation_basis_unavailable",
+        "missing_base_audit"
+      ],
+      "source_verification_status": "unverified",
+      "status": "Blocked",
+      "ticker": "VST"
+    }
+  ]
+}
