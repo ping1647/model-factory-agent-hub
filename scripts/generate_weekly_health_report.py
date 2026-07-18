@@ -124,7 +124,7 @@ def build_report(
             "buy_zone_age_days": buy_zone_age,
             "base_audit_exists": base_audit_exists,
             "source_verification_status": None if source is None else source.get("verification_status"),
-            "automatic_buy_signal": false,
+            "automatic_buy_signal": False,
         })
 
     health_by_model: dict[str, list[dict[str, Any]]] = {}
