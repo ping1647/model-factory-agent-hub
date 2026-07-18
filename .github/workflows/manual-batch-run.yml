@@ -51,7 +51,17 @@ jobs:
         run: python -m pip install pytest
 
       - name: Run test suite
-        run: pytest tests -q
+        run: |
+          set -o pipefail
+          pytest tests -q 2>&1 | tee pytest.log
+
+      - name: Upload pytest log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: weekly-governance-pytest-log
+          path: pytest.log
+          if-no-files-found: warn
 
       - name: Generate weekly governance health report
         run: python scripts/generate_weekly_health_report.py
