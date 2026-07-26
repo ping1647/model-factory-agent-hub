@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-07-19",
+  "as_of": "2026-07-26",
   "excluded_models": [
     {
       "allowed_for_training": false,
@@ -12,7 +12,7 @@
       "status": "excluded_undefined"
     }
   ],
-  "generated_at": "2026-07-19T09:48:42.504505+00:00",
+  "generated_at": "2026-07-26T09:56:11.583293+00:00",
   "governance": {
     "automatic_buy_signals_allowed": false,
     "decision_support_only": true,
@@ -228,12 +228,13 @@
       "base_audit_exists": true,
       "blockers": [
         "stale_buy_zone_over_30_days",
+        "stale_price_over_7_days",
         "unverified_source_provenance"
       ],
-      "buy_zone_age_days": 64,
+      "buy_zone_age_days": 71,
       "buy_zone_as_of": "2026-05-16",
       "model_id": "M13",
-      "price_age_days": 2,
+      "price_age_days": 9,
       "price_as_of": "2026-07-17",
       "review_items": [],
       "source_verification_status": "unverified",
@@ -246,12 +247,13 @@
       "blockers": [
         "guidance_withdrawn",
         "stale_buy_zone_over_30_days",
+        "stale_price_over_7_days",
         "unverified_source_provenance"
       ],
-      "buy_zone_age_days": 64,
+      "buy_zone_age_days": 71,
       "buy_zone_as_of": "2026-05-16",
       "model_id": "M13",
-      "price_age_days": 2,
+      "price_age_days": 9,
       "price_as_of": "2026-07-17",
       "review_items": [
         "eps_valuation_basis_unavailable"
@@ -265,12 +267,13 @@
       "base_audit_exists": true,
       "blockers": [
         "stale_buy_zone_over_30_days",
+        "stale_price_over_7_days",
         "unverified_source_provenance"
       ],
-      "buy_zone_age_days": 64,
+      "buy_zone_age_days": 71,
       "buy_zone_as_of": "2026-05-16",
       "model_id": "M5",
-      "price_age_days": 2,
+      "price_age_days": 9,
       "price_as_of": "2026-07-17",
       "review_items": [],
       "source_verification_status": "unverified",
@@ -282,12 +285,13 @@
       "base_audit_exists": false,
       "blockers": [
         "stale_buy_zone_over_30_days",
+        "stale_price_over_7_days",
         "unverified_source_provenance"
       ],
-      "buy_zone_age_days": 64,
+      "buy_zone_age_days": 71,
       "buy_zone_as_of": "2026-05-16",
       "model_id": "M6",
-      "price_age_days": 2,
+      "price_age_days": 9,
       "price_as_of": "2026-07-17",
       "review_items": [
         "eps_valuation_basis_unavailable",
@@ -302,12 +306,13 @@
       "base_audit_exists": false,
       "blockers": [
         "stale_buy_zone_over_30_days",
+        "stale_price_over_7_days",
         "unverified_source_provenance"
       ],
-      "buy_zone_age_days": 64,
+      "buy_zone_age_days": 71,
       "buy_zone_as_of": "2026-05-16",
       "model_id": "M7",
-      "price_age_days": 2,
+      "price_age_days": 9,
       "price_as_of": "2026-07-17",
       "review_items": [
         "eps_valuation_basis_unavailable",
@@ -322,12 +327,13 @@
       "base_audit_exists": false,
       "blockers": [
         "stale_buy_zone_over_30_days",
+        "stale_price_over_7_days",
         "unverified_source_provenance"
       ],
-      "buy_zone_age_days": 64,
+      "buy_zone_age_days": 71,
       "buy_zone_as_of": "2026-05-16",
       "model_id": "M14",
-      "price_age_days": 2,
+      "price_age_days": 9,
       "price_as_of": "2026-07-17",
       "review_items": [
         "eps_valuation_basis_unavailable",

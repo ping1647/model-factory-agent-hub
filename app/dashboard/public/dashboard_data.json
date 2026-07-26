@@ -4,44 +4,24 @@
     "blocked_names": [],
     "needs_review": [
       {
-        "blockers": [],
-        "buy_zone_status": "Above Buy Zone",
-        "decision": "",
-        "model_id": "M6",
-        "next_action": "Provide base_audit input, then run risk/dashboard/PQA stages.",
-        "pipeline_status": "Needs Audit",
-        "position_class": "",
-        "risk_score": null,
-        "ticker": "HIMS",
-        "valuation_status": "Insufficient Data"
-      },
-      {
-        "blockers": [],
-        "buy_zone_status": "Above Buy Zone",
-        "decision": "",
-        "model_id": "M7",
-        "next_action": "Provide base_audit input, then run risk/dashboard/PQA stages.",
-        "pipeline_status": "Needs Audit",
-        "position_class": "",
-        "risk_score": null,
-        "ticker": "NVDA",
-        "valuation_status": "Insufficient Data"
-      },
-      {
-        "blockers": [],
-        "buy_zone_status": "Above Buy Zone",
-        "decision": "",
-        "model_id": "M14",
-        "next_action": "Provide base_audit input, then run risk/dashboard/PQA stages.",
-        "pipeline_status": "Needs Audit",
-        "position_class": "",
-        "risk_score": null,
-        "ticker": "VST",
-        "valuation_status": "Insufficient Data"
+        "blockers": [
+          "stale_price",
+          "stale_price_blocks_action"
+        ],
+        "buy_zone_status": "Below Buy Zone",
+        "decision": "Starter",
+        "model_id": "M13",
+        "next_action": "Resolve blockers before proceeding with any decision output.",
+        "pipeline_status": "Fail",
+        "position_class": "Core/Satellite Starter",
+        "risk_score": 4,
+        "ticker": "TTEK",
+        "valuation_status": "Computed"
       },
       {
         "blockers": [
-          "guidance_withdrawn"
+          "guidance_withdrawn",
+          "stale_price"
         ],
         "buy_zone_status": "Below Buy Zone",
         "decision": "Wait",
@@ -52,6 +32,63 @@
         "risk_score": 7,
         "ticker": "ERII",
         "valuation_status": "Unreliable - Guidance Withdrawn"
+      },
+      {
+        "blockers": [
+          "stale_price",
+          "stale_price_blocks_action"
+        ],
+        "buy_zone_status": "Above Buy Zone",
+        "decision": "Starter",
+        "model_id": "M5",
+        "next_action": "Resolve blockers before proceeding with any decision output.",
+        "pipeline_status": "Fail",
+        "position_class": "Satellite / High-Beta Starter",
+        "risk_score": 7,
+        "ticker": "SOFI",
+        "valuation_status": "Computed"
+      },
+      {
+        "blockers": [
+          "stale_price"
+        ],
+        "buy_zone_status": "Above Buy Zone",
+        "decision": "",
+        "model_id": "M6",
+        "next_action": "Resolve blockers before proceeding with any decision output.",
+        "pipeline_status": "Fail",
+        "position_class": "",
+        "risk_score": null,
+        "ticker": "HIMS",
+        "valuation_status": "Insufficient Data"
+      },
+      {
+        "blockers": [
+          "stale_price"
+        ],
+        "buy_zone_status": "Above Buy Zone",
+        "decision": "",
+        "model_id": "M7",
+        "next_action": "Resolve blockers before proceeding with any decision output.",
+        "pipeline_status": "Fail",
+        "position_class": "",
+        "risk_score": null,
+        "ticker": "NVDA",
+        "valuation_status": "Insufficient Data"
+      },
+      {
+        "blockers": [
+          "stale_price"
+        ],
+        "buy_zone_status": "Above Buy Zone",
+        "decision": "",
+        "model_id": "M14",
+        "next_action": "Resolve blockers before proceeding with any decision output.",
+        "pipeline_status": "Fail",
+        "position_class": "",
+        "risk_score": null,
+        "ticker": "VST",
+        "valuation_status": "Insufficient Data"
       }
     ],
     "top_candidates": []
@@ -59,7 +96,23 @@
   "failed": [
     {
       "blockers": [
-        "guidance_withdrawn"
+        "stale_price",
+        "stale_price_blocks_action"
+      ],
+      "buy_zone_status": "Below Buy Zone",
+      "decision": "Starter",
+      "model_id": "M13",
+      "next_action": "Resolve blockers before proceeding with any decision output.",
+      "pipeline_status": "Fail",
+      "position_class": "Core/Satellite Starter",
+      "risk_score": 4,
+      "ticker": "TTEK",
+      "valuation_status": "Computed"
+    },
+    {
+      "blockers": [
+        "guidance_withdrawn",
+        "stale_price"
       ],
       "buy_zone_status": "Below Buy Zone",
       "decision": "Wait",
@@ -70,52 +123,72 @@
       "risk_score": 7,
       "ticker": "ERII",
       "valuation_status": "Unreliable - Guidance Withdrawn"
-    }
-  ],
-  "latest_agent_runs_placeholder": [],
-  "needs_audit": [
+    },
     {
-      "blockers": [],
+      "blockers": [
+        "stale_price",
+        "stale_price_blocks_action"
+      ],
+      "buy_zone_status": "Above Buy Zone",
+      "decision": "Starter",
+      "model_id": "M5",
+      "next_action": "Resolve blockers before proceeding with any decision output.",
+      "pipeline_status": "Fail",
+      "position_class": "Satellite / High-Beta Starter",
+      "risk_score": 7,
+      "ticker": "SOFI",
+      "valuation_status": "Computed"
+    },
+    {
+      "blockers": [
+        "stale_price"
+      ],
       "buy_zone_status": "Above Buy Zone",
       "decision": "",
       "model_id": "M6",
-      "next_action": "Provide base_audit input, then run risk/dashboard/PQA stages.",
-      "pipeline_status": "Needs Audit",
+      "next_action": "Resolve blockers before proceeding with any decision output.",
+      "pipeline_status": "Fail",
       "position_class": "",
       "risk_score": null,
       "ticker": "HIMS",
       "valuation_status": "Insufficient Data"
     },
     {
-      "blockers": [],
+      "blockers": [
+        "stale_price"
+      ],
       "buy_zone_status": "Above Buy Zone",
       "decision": "",
       "model_id": "M7",
-      "next_action": "Provide base_audit input, then run risk/dashboard/PQA stages.",
-      "pipeline_status": "Needs Audit",
+      "next_action": "Resolve blockers before proceeding with any decision output.",
+      "pipeline_status": "Fail",
       "position_class": "",
       "risk_score": null,
       "ticker": "NVDA",
       "valuation_status": "Insufficient Data"
     },
     {
-      "blockers": [],
+      "blockers": [
+        "stale_price"
+      ],
       "buy_zone_status": "Above Buy Zone",
       "decision": "",
       "model_id": "M14",
-      "next_action": "Provide base_audit input, then run risk/dashboard/PQA stages.",
-      "pipeline_status": "Needs Audit",
+      "next_action": "Resolve blockers before proceeding with any decision output.",
+      "pipeline_status": "Fail",
       "position_class": "",
       "risk_score": null,
       "ticker": "VST",
       "valuation_status": "Insufficient Data"
     }
   ],
+  "latest_agent_runs_placeholder": [],
+  "needs_audit": [],
   "risk_blocked": [],
   "summary": {
-    "fail_count": 1,
-    "needs_audit_count": 3,
-    "pass_count": 2,
+    "fail_count": 6,
+    "needs_audit_count": 0,
+    "pass_count": 0,
     "risk_blocked_count": 0,
     "total_count": 6,
     "warning_count": 0
