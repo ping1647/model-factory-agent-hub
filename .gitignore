@@ -209,6 +209,9 @@ tempCodeRunnerFile.py
 # PyPI configuration file
 .pypirc
 
+# Locally generated synthetic report artifacts
+artifacts/
+
 # Marimo
 marimo/_static/
 marimo/_lsp/
